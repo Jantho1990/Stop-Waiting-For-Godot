@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://t10yqbyngka"]
+[gd_scene load_steps=4 format=3 uid="uid://cie0dy35ien8t"]
 
 [ext_resource type="Script" path="res://nodes/Presentation.gd" id="1_3yxg0"]
+[ext_resource type="PackedScene" uid="uid://dm1fyqv1tqg6k" path="res://presentations/test0/slides/TestSlide0Slide.tscn" id="2_qgbn8"]
+[ext_resource type="PackedScene" uid="uid://c7tn5mmu6pl4t" path="res://presentations/test0/slides/TestSlide1Slide.tscn" id="3_tpdon"]
 
-[node name="Test0Presentation" type="Node"]
+[node name="Test0Presentation2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_3yxg0")
+
+[node name="TestSlide0Slide" parent="." instance=ExtResource("2_qgbn8")]
+visible = false
+layout_mode = 1
+
+[node name="TestSlide1Slide" parent="." instance=ExtResource("3_tpdon")]
+visible = false
+layout_mode = 1

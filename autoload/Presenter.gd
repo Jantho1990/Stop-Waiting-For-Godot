@@ -12,3 +12,29 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
   pass
+
+
+func _input(_inputEvent: InputEvent) -> void:
+  if Input.is_action_just_pressed("slide_step_next"):
+    activePresentation.advance()
+  elif Input.is_action_just_pressed("slide_step_prev"):
+    pass
+  elif Input.is_action_just_pressed("slide_next"):
+    pass
+  elif Input.is_action_just_pressed("slide_prev"):
+    pass
+  elif Input.is_action_just_pressed("slide_reset"):
+    pass
+  elif Input.is_action_just_pressed("slide_restart"):
+    pass
+
+
+func activate_presentation(presentationNode: Presentation) -> void:
+  activePresentation = presentationNode
+  
+
+func start_presentation() -> void:
+  if not activePresentation:
+    return
+    
+  activePresentation.start()

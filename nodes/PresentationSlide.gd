@@ -1,12 +1,27 @@
 class_name PresentationSlide
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-  pass # Replace with function body.
+signal finished
+signal started
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-  pass
+@export var step := 0 # The current step this slide is on.
+@export_range(1, 9999) var total_steps := 1
+
+
+func _finish() -> void:
+  emit_signal("finished")
+
+
+func advance() -> void:
+  step += 1
+  if step == total_steps:
+    _finish()
+
+
+func finish() -> void:
+  _finish()
+
+
+func start() -> void:
+  step = 0
