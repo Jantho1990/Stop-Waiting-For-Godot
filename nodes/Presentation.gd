@@ -23,17 +23,27 @@ func _on_SlideNode_finished() -> void:
   _activate_slide(currentSlide)
 
 
+func _on_SlideNode_finish_reversed() -> void:
+  if currentSlide.get_index() == 0:
+    return
+  _deactivate_slide(currentSlide)  
+  currentSlide = self.slides[currentSlide.get_index() - 1]
+  _activate_slide(currentSlide)
+
+
 func _get_slides() -> Array:
   return get_children()
 
 
 func _activate_slide(slideNode: PresentationSlide) -> void:
   slideNode.finished.connect(_on_SlideNode_finished)
+  slideNode.finish_reversed.connect(_on_SlideNode_finish_reversed)
   slideNode.show()
 
 
 func _deactivate_slide(slideNode: PresentationSlide) -> void:
   slideNode.finished.disconnect(_on_SlideNode_finished)
+  slideNode.finish_reversed.disconnect(_on_SlideNode_finish_reversed)
   slideNode.hide()
 
 
@@ -41,8 +51,12 @@ func _finish() -> void:
   emit_signal("finished")
 
 
-func advance() -> void:
-  currentSlide.advance()
+func next() -> void:
+  currentSlide.next()
+  
+
+func previous() -> void:
+  currentSlide.previous()
   
   
 func start() -> void:

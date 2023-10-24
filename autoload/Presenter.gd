@@ -16,9 +16,9 @@ func _process(delta):
 
 func _input(_inputEvent: InputEvent) -> void:
   if Input.is_action_just_pressed("slide_step_next"):
-    activePresentation.advance()
+    activePresentation.next()
   elif Input.is_action_just_pressed("slide_step_prev"):
-    pass
+    activePresentation.previous()
   elif Input.is_action_just_pressed("slide_next"):
     pass
   elif Input.is_action_just_pressed("slide_prev"):

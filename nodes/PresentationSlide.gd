@@ -2,6 +2,7 @@ class_name PresentationSlide
 extends Control
 
 signal finished
+signal finish_reversed
 signal started
 
 
@@ -13,14 +14,28 @@ func _finish() -> void:
   emit_signal("finished")
 
 
-func advance() -> void:
-  step += 1
-  if step == total_steps:
-    _finish()
+func _finish_reverse() -> void:
+  emit_signal("finish_reversed")
 
 
 func finish() -> void:
   _finish()
+
+
+func next() -> void:
+  if step < total_steps - 1:
+    step += 1
+    return
+  
+  step += 1
+  _finish()
+    
+    
+func previous() -> void:
+  if step == 0:
+    _finish_reverse()
+    return
+  step -= 1
 
 
 func start() -> void:

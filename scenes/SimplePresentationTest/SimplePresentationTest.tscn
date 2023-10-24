@@ -14,3 +14,5 @@ script = ExtResource("1_rpfeq")
 
 [node name="Test0Presentation" parent="." instance=ExtResource("2_skdra")]
 layout_mode = 1
+offset_top = 8.0
+offset_bottom = 8.0
