@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://n0jie61s1qrc"]
+[gd_scene load_steps=15 format=3 uid="uid://n0jie61s1qrc"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_dw6u4"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_5xcvb"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_6egbp"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_ewphr"]
 [ext_resource type="Texture2D" uid="uid://cunlbm4scrnt2" path="res://assets/media/images/Iven Smith - 9313-Vert.jpg" id="6_m6emy"]
+[ext_resource type="Texture2D" uid="uid://dhd68fdyndif6" path="res://assets/media/images/apocalypse-asset.jpg" id="7_wy37s"]
+[ext_resource type="Texture2D" uid="uid://dn75sj7gwr5ia" path="res://assets/media/images/despaired-asset.jpg" id="8_bbrd0"]
+[ext_resource type="Texture2D" uid="uid://dqjax7yo1tivs" path="res://assets/media/images/explore-asset.jpg" id="9_ht5qm"]
+[ext_resource type="Texture2D" uid="uid://bkp06fjrhmmor" path="res://assets/media/images/developer-asset.jpg" id="10_nlq1j"]
+[ext_resource type="Texture2D" uid="uid://dwn8f147kbao1" path="res://assets/media/images/pizza-asset.jpg" id="11_3e8e8"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_5xcvb")
@@ -78,6 +83,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
+alignment = 1
 
 [node name="Unity" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
 layout_mode = 2
@@ -199,9 +205,60 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 4
 texture = ExtResource("6_m6emy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Apocalypse" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("7_wy37s")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Despair" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("8_bbrd0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Explore" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("9_ht5qm")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Developer" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("10_nlq1j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Pizza" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("11_3e8e8")
 expand_mode = 3
 stretch_mode = 5
 

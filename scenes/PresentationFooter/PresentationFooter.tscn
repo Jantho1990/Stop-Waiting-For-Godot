@@ -21,5 +21,5 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[right][i]Josh Anthony
+text = "[right][i]Josh Anthony, Loonicy Entertainment
 Presented for IGDA Twin Cities (November 2023)[/i][/right]"
