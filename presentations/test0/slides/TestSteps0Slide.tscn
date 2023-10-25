@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cafaojdih10d6"]
+[gd_scene load_steps=11 format=3 uid="uid://cafaojdih10d6"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_y73s2"]
 [ext_resource type="Script" path="res://resources/FadeInStep.gd" id="2_782v3"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_k1l8g"]
+[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="4_fnuc8"]
 
 [sub_resource type="Resource" id="Resource_o2w7q"]
 script = ExtResource("2_k1l8g")
@@ -23,6 +24,10 @@ script = ExtResource("2_782v3")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/GridContainer/Label2"), NodePath("PanelContainer/GridContainer/Label3")])
 animation_duriation = 0.5
 
+[sub_resource type="Resource" id="Resource_lq6v2"]
+script = ExtResource("4_fnuc8")
+animation_duriation = 0.5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj441"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
@@ -34,7 +39,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y73s2")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_o2w7q"), SubResource("Resource_4uv2m"), SubResource("Resource_l83c2"), SubResource("Resource_m27iv")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_o2w7q"), SubResource("Resource_4uv2m"), SubResource("Resource_l83c2"), SubResource("Resource_m27iv"), SubResource("Resource_lq6v2")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
