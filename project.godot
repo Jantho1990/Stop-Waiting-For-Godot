@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 
 Presenter="*res://autoload/Presenter.gd"
 
+[gui]
+
+theme/custom="res://assets/themes/StopWaitingForGodot/StopWaitingForGodot.tres"
+
 [input]
 
 slide_next={

@@ -55,24 +55,28 @@ layout_mode = 2
 columns = 2
 
 [node name="Label" type="Label" parent="PanelContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "This is Step 1"
 
 [node name="Label2" type="Label" parent="PanelContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "This is Step 3"
 
 [node name="Label3" type="Label" parent="PanelContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "This is also Step 3"
 
 [node name="Label4" type="Label" parent="PanelContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
