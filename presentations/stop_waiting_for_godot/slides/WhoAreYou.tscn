@@ -1,12 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://n0jie61s1qrc"]
+[gd_scene load_steps=21 format=3 uid="uid://n0jie61s1qrc"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_dw6u4"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_5xcvb"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_nklj2"]
+[ext_resource type="Script" path="res://resources/WAYIntroStep.gd" id="3_v8nuh"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_3c8jh"]
+[ext_resource type="Script" path="res://resources/WAYAdvanceStep.gd" id="4_nqeih"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_6egbp"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_ewphr"]
-[ext_resource type="Texture2D" uid="uid://cunlbm4scrnt2" path="res://assets/media/images/Iven Smith - 9313-Vert.jpg" id="6_m6emy"]
 [ext_resource type="Texture2D" uid="uid://dhd68fdyndif6" path="res://assets/media/images/apocalypse-asset.jpg" id="7_wy37s"]
 [ext_resource type="Texture2D" uid="uid://dn75sj7gwr5ia" path="res://assets/media/images/despaired-asset.jpg" id="8_bbrd0"]
 [ext_resource type="Texture2D" uid="uid://dqjax7yo1tivs" path="res://assets/media/images/explore-asset.jpg" id="9_ht5qm"]
@@ -17,11 +18,49 @@
 script = ExtResource("2_5xcvb")
 animation_duriation = 0.5
 
+[sub_resource type="Resource" id="Resource_yyh3t"]
+script = ExtResource("3_v8nuh")
+textBulletPath = NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unity")
+imageNodePath = NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Apocalypse")
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_oep1g"]
+script = ExtResource("4_nqeih")
+fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Despair")])
+fadeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Apocalypse")])
+stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unity/RichTextLabel2")])
+stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unity/RichTextLabel")])
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_xky36"]
+script = ExtResource("4_nqeih")
+fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Explore")])
+fadeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Despair")])
+stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal/RichTextLabel2")])
+stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal/RichTextLabel")])
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_hr8q7"]
+script = ExtResource("4_nqeih")
+fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Developer")])
+fadeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Explore")])
+stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity/RichTextLabel2")])
+stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity/RichTextLabel")])
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_fk1tv"]
+script = ExtResource("4_nqeih")
+fadeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Pizza")])
+fadeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Developer")])
+stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner/RichTextLabel2")])
+stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner/RichTextLabel")])
+animation_duriation = 0.5
+
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_nklj2")
 animation_duriation = 0.5
 
-[node name="BasicSlideTemplate" type="Control"]
+[node name="WhoAreYou" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,7 +68,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dw6u4")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_yyh3t"), SubResource("Resource_oep1g"), SubResource("Resource_xky36"), SubResource("Resource_hr8q7"), SubResource("Resource_fk1tv"), SubResource("Resource_1vcjn")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -86,6 +125,7 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Unity" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -105,10 +145,22 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
+text = "[shake][i]Fleeing the fires of Unity ownership?[/i][/shake]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unity"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
 text = "[i]Fleeing the fires of Unity ownership?[/i]"
 fit_content = true
 
 [node name="Unreal" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -128,10 +180,22 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
+text = "[tornado radius=5.0 freq=10.0][i]Working in Unreal feeling unrealistic?[/i][/tornado]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Unreal"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
 text = "[i]Working in Unreal feeling unrealistic?[/i]"
 fit_content = true
 
 [node name="Curiosity" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -148,6 +212,21 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0.215686, 0.376471, 0.721569, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "[wave][i]Interested in exploring other game engines?[/i][/wave]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0.215686, 0.376471, 0.721569, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
@@ -155,6 +234,7 @@ text = "[i]Interested in exploring other game engines?[/i]"
 fit_content = true
 
 [node name="Beginner" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -174,10 +254,22 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
+text = "[rainbow][i]Want to make your very first game?[/i][/rainbow]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
 text = "[i]Want to make your very first game?[/i]"
 fit_content = true
 
 [node name="FreePizza" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -197,6 +289,17 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
+text = "[rainbow][i]Just here for the free pizza?[/i][/rainbow]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
 text = "[i]Just here for the free pizza?[/i]"
 fit_content = true
 
@@ -204,18 +307,8 @@ fit_content = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 600)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-texture = ExtResource("6_m6emy")
-expand_mode = 3
-stretch_mode = 5
-
 [node name="Apocalypse" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -225,7 +318,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Despair" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -235,7 +328,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Explore" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -245,6 +338,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Developer" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -254,6 +348,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Pizza" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
 size_flags_horizontal = 8
