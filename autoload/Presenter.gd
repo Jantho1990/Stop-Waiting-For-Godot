@@ -15,6 +15,9 @@ func _process(delta):
 
 
 func _input(_inputEvent: InputEvent) -> void:
+  if not activePresentation:
+    return
+  
   if Input.is_action_just_pressed("slide_step_next"):
     activePresentation.next()
   elif Input.is_action_just_pressed("slide_step_prev"):
@@ -29,12 +32,19 @@ func _input(_inputEvent: InputEvent) -> void:
     pass
 
 
+func _on_ActivePresentation_finished() -> void:
+  activePresentation.hide()
+  activePresentation = null
+
+
 func activate_presentation(presentationNode: Presentation) -> void:
   activePresentation = presentationNode
+  activePresentation.finished.connect(_on_ActivePresentation_finished)
   
 
 func start_presentation() -> void:
   if not activePresentation:
     return
     
+  activePresentation.show()
   activePresentation.start()
