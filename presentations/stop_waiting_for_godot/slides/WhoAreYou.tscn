@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://n0jie61s1qrc"]
+[gd_scene load_steps=25 format=3 uid="uid://n0jie61s1qrc"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_dw6u4"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_5xcvb"]
@@ -8,11 +8,13 @@
 [ext_resource type="Script" path="res://resources/WAYAdvanceStep.gd" id="4_nqeih"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_6egbp"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_ewphr"]
+[ext_resource type="Script" path="res://resources/WAYNoPizzaStep.gd" id="5_x1osr"]
 [ext_resource type="Texture2D" uid="uid://dhd68fdyndif6" path="res://assets/media/images/apocalypse-asset.jpg" id="7_wy37s"]
 [ext_resource type="Texture2D" uid="uid://dn75sj7gwr5ia" path="res://assets/media/images/despaired-asset.jpg" id="8_bbrd0"]
 [ext_resource type="Texture2D" uid="uid://dqjax7yo1tivs" path="res://assets/media/images/explore-asset.jpg" id="9_ht5qm"]
 [ext_resource type="Texture2D" uid="uid://bkp06fjrhmmor" path="res://assets/media/images/developer-asset.jpg" id="10_nlq1j"]
 [ext_resource type="Texture2D" uid="uid://dwn8f147kbao1" path="res://assets/media/images/pizza-asset.jpg" id="11_3e8e8"]
+[ext_resource type="Shader" uid="uid://xsbjk8grxrr0" path="res://assets/shaders/GrayscaleShader.tres" id="12_esmwy"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_5xcvb")
@@ -56,9 +58,21 @@ stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBo
 stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner/RichTextLabel")])
 animation_duriation = 0.5
 
+[sub_resource type="Resource" id="Resource_vwuu2"]
+script = ExtResource("5_x1osr")
+fadeGrayPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza/RightArrow")])
+stabilizeInPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza/RichTextLabel2")])
+stabilizeOutPaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza/RichTextLabel")])
+grayscaleImagePath = NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer/Pizza")
+animation_duriation = 0.1
+
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_nklj2")
 animation_duriation = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkvai"]
+shader = ExtResource("12_esmwy")
+shader_parameter/gray_amount = 0.0
 
 [node name="WhoAreYou" type="Control"]
 layout_mode = 3
@@ -68,7 +82,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dw6u4")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_yyh3t"), SubResource("Resource_oep1g"), SubResource("Resource_xky36"), SubResource("Resource_hr8q7"), SubResource("Resource_fk1tv"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_yyh3t"), SubResource("Resource_oep1g"), SubResource("Resource_xky36"), SubResource("Resource_hr8q7"), SubResource("Resource_fk1tv"), SubResource("Resource_vwuu2"), SubResource("Resource_1vcjn")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -212,12 +226,10 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_colors/font_outline_color = Color(0.215686, 0.376471, 0.721569, 1)
-theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "[wave][i]Interested in exploring other game engines?[/i][/wave]"
+text = "[wave amp=29.0 freq=15.0][i]Interested in exploring other game engines?[/i][/wave]"
 fit_content = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Curiosity"]
@@ -225,8 +237,6 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_colors/font_outline_color = Color(0.215686, 0.376471, 0.721569, 1)
-theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
@@ -254,7 +264,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "[rainbow][i]Want to make your very first game?[/i][/rainbow]"
+text = "[rainbow freq=0.2 sat=0.8 val=2.8][i]Want to make your very first game?[/i][/rainbow]"
 fit_content = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/Beginner"]
@@ -289,7 +299,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "[rainbow][i]Just here for the free pizza?[/i][/rainbow]"
+text = "[wave amp=50.0 freq=5.0][tornado radius=10.0 freq=1.0][shake rate=20.0 level=5][rainbow][i]Just here for the free pizza?[/i][/rainbow][/shake][/tornado][/wave]"
 fit_content = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/FreePizza"]
@@ -300,7 +310,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "[i]Just here for the free pizza?[/i]"
+text = "[color=#99999955][s][i]Just here for the free pizza?[/i][/s][/color]"
 fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
@@ -349,6 +359,7 @@ stretch_mode = 5
 
 [node name="Pizza" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/MarginContainer"]
 modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_xkvai")
 custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
 size_flags_horizontal = 8
