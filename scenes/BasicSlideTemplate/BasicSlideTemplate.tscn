@@ -35,9 +35,9 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
+theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
+theme_override_constants/margin_bottom = 32
 
 [node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -64,6 +64,7 @@ theme_override_styles/separator = ExtResource("4_erqxn")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 64
 
 [node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
@@ -95,3 +96,4 @@ fit_content = true
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("5_y6uwa")]
 layout_mode = 2
+size_flags_vertical = 8
