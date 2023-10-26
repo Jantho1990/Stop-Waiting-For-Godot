@@ -56,9 +56,9 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
+theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
+theme_override_constants/margin_bottom = 32
 
 [node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -93,15 +93,16 @@ layout_mode = 2
 theme_override_constants/separation = 128
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
-custom_minimum_size = Vector2(467, 700)
+custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
+size_flags_vertical = 4
 script = ExtResource("6_oda56")
 
 [node name="Mugshot" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper"]
 layout_mode = 2
 offset_left = -800.0
-offset_right = -333.0
-offset_bottom = 700.0
+offset_right = -400.0
+offset_bottom = 600.0
 
 [node name="Me" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper/Mugshot"]
 layout_mode = 2
@@ -111,12 +112,14 @@ texture = ExtResource("6_xakas")
 stretch_mode = 5
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
-custom_minimum_size = Vector2(410, 700)
+custom_minimum_size = Vector2(540, 700)
 layout_mode = 2
+size_flags_horizontal = 6
 script = ExtResource("6_oda56")
 
 [node name="BioList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper2"]
-layout_mode = 2
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 0
 offset_top = 1000.0
 offset_right = 410.0
 offset_bottom = 1700.0
