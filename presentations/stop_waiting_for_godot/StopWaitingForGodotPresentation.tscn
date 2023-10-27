@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://brtqwto1mgfvj"]
+[gd_scene load_steps=19 format=3 uid="uid://brtqwto1mgfvj"]
 
 [ext_resource type="Script" path="res://nodes/Presentation.gd" id="1_qwp1m"]
 [ext_resource type="PackedScene" uid="uid://n0jie61s1qrc" path="res://presentations/stop_waiting_for_godot/slides/WhoAreYou.tscn" id="2_4cyv6"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b3d1jsp5xgig7" path="res://presentations/stop_waiting_for_godot/slides/ReleaseTargetsConsoles.tscn" id="15_ht5p6"]
 [ext_resource type="PackedScene" uid="uid://bw4c5y8ekyw1i" path="res://presentations/stop_waiting_for_godot/slides/EcosystemAssets.tscn" id="16_06oxa"]
 [ext_resource type="PackedScene" uid="uid://bw7je5p1y6unm" path="res://presentations/stop_waiting_for_godot/slides/EcosystemLearning.tscn" id="17_rwp6d"]
+[ext_resource type="PackedScene" uid="uid://08b4e853v7hq" path="res://presentations/stop_waiting_for_godot/slides/EcosystemCompanies.tscn" id="18_itb5m"]
 
 [node name="StopWaitingForGodotPresentation" type="Control"]
 layout_mode = 3
@@ -87,5 +88,9 @@ visible = false
 layout_mode = 1
 
 [node name="EcosystemAssets" parent="." instance=ExtResource("16_06oxa")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemCompanies" parent="." instance=ExtResource("18_itb5m")]
 visible = false
 layout_mode = 1
