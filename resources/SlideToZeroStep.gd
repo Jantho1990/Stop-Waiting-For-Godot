@@ -18,8 +18,6 @@ func _set_animatedNodePaths(value: Array) -> void:
     await slide.ready
   for animatedNodePath in animatedNodePaths:
     var animatedNode = slide.get_node(animatedNodePath)
-    if not animatedNode:
-      breakpoint
     _animatedNodes.push_back(slide.get_node(animatedNodePath))
     _old_positions[animatedNode] = animatedNode.position
 
