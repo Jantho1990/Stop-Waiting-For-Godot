@@ -16,7 +16,7 @@ animation_duriation = 0.5
 script = ExtResource("4_ygbvc")
 animation_duriation = 0.5
 
-[node name="WhatIsMyTalk" type="Control"]
+[node name="DownloadingTheEngine" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

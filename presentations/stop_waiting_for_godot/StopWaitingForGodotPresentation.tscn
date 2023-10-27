@@ -1,0 +1,91 @@
+[gd_scene load_steps=18 format=3 uid="uid://brtqwto1mgfvj"]
+
+[ext_resource type="Script" path="res://nodes/Presentation.gd" id="1_qwp1m"]
+[ext_resource type="PackedScene" uid="uid://n0jie61s1qrc" path="res://presentations/stop_waiting_for_godot/slides/WhoAreYou.tscn" id="2_4cyv6"]
+[ext_resource type="PackedScene" uid="uid://dpjgjyoq0wxtg" path="res://presentations/stop_waiting_for_godot/slides/IntroducingGodotEngine.tscn" id="3_us3kw"]
+[ext_resource type="PackedScene" uid="uid://b550pbe3vnrxo" path="res://presentations/stop_waiting_for_godot/slides/WhoAmI.tscn" id="4_pttk1"]
+[ext_resource type="PackedScene" uid="uid://lvorls185ve6" path="res://presentations/stop_waiting_for_godot/slides/WhatIsMyTalk.tscn" id="5_v7d3j"]
+[ext_resource type="PackedScene" uid="uid://dk54xyvfb1os4" path="res://presentations/stop_waiting_for_godot/slides/GodotHistory.tscn" id="6_d336g"]
+[ext_resource type="PackedScene" uid="uid://t78fslafkw7s" path="res://presentations/stop_waiting_for_godot/slides/OpenSourceSoftware.tscn" id="7_ji8mb"]
+[ext_resource type="PackedScene" uid="uid://ccjo3vakb25i" path="res://presentations/stop_waiting_for_godot/slides/Funding.tscn" id="8_50k6i"]
+[ext_resource type="PackedScene" uid="uid://cyrdlrtt8amva" path="res://presentations/stop_waiting_for_godot/slides/OrganizationalStructure.tscn" id="9_w46tj"]
+[ext_resource type="PackedScene" uid="uid://dxj12d5goaywq" path="res://presentations/stop_waiting_for_godot/slides/DownloadingTheEngine.tscn" id="10_ong8w"]
+[ext_resource type="PackedScene" uid="uid://cc33b1lhevig8" path="res://presentations/stop_waiting_for_godot/slides/VersionComparison.tscn" id="11_bwcrq"]
+[ext_resource type="PackedScene" uid="uid://sa1lkwdxqfqt" path="res://presentations/stop_waiting_for_godot/slides/SupportedOS.tscn" id="12_0yuxa"]
+[ext_resource type="PackedScene" uid="uid://cemt1nywye2g8" path="res://presentations/stop_waiting_for_godot/slides/DevelopingAGame.tscn" id="13_cmsgu"]
+[ext_resource type="PackedScene" uid="uid://vbm3y2n6466n" path="res://presentations/stop_waiting_for_godot/slides/ReleaseTargets.tscn" id="14_kma21"]
+[ext_resource type="PackedScene" uid="uid://b3d1jsp5xgig7" path="res://presentations/stop_waiting_for_godot/slides/ReleaseTargetsConsoles.tscn" id="15_ht5p6"]
+[ext_resource type="PackedScene" uid="uid://bw4c5y8ekyw1i" path="res://presentations/stop_waiting_for_godot/slides/EcosystemAssets.tscn" id="16_06oxa"]
+[ext_resource type="PackedScene" uid="uid://bw7je5p1y6unm" path="res://presentations/stop_waiting_for_godot/slides/EcosystemLearning.tscn" id="17_rwp6d"]
+
+[node name="StopWaitingForGodotPresentation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwp1m")
+
+[node name="WhoAreYou" parent="." instance=ExtResource("2_4cyv6")]
+layout_mode = 1
+
+[node name="IntroducingGodotEngine" parent="." instance=ExtResource("3_us3kw")]
+visible = false
+layout_mode = 1
+
+[node name="WhoAmI" parent="." instance=ExtResource("4_pttk1")]
+visible = false
+layout_mode = 1
+
+[node name="WhatIsMyTalk" parent="." instance=ExtResource("5_v7d3j")]
+visible = false
+layout_mode = 1
+
+[node name="GodotHistory" parent="." instance=ExtResource("6_d336g")]
+visible = false
+layout_mode = 1
+
+[node name="OpenSourceSoftware" parent="." instance=ExtResource("7_ji8mb")]
+visible = false
+layout_mode = 1
+
+[node name="Funding" parent="." instance=ExtResource("8_50k6i")]
+visible = false
+layout_mode = 1
+
+[node name="OrganizationalStructure" parent="." instance=ExtResource("9_w46tj")]
+visible = false
+layout_mode = 1
+
+[node name="DownloadingTheEngine" parent="." instance=ExtResource("10_ong8w")]
+visible = false
+layout_mode = 1
+
+[node name="VersionComparison" parent="." instance=ExtResource("11_bwcrq")]
+visible = false
+layout_mode = 1
+
+[node name="SupportedOSes" parent="." instance=ExtResource("12_0yuxa")]
+visible = false
+layout_mode = 1
+
+[node name="DevelopingAGame" parent="." instance=ExtResource("13_cmsgu")]
+visible = false
+layout_mode = 1
+
+[node name="ReleaseTargets" parent="." instance=ExtResource("14_kma21")]
+visible = false
+layout_mode = 1
+
+[node name="ReleaseTargetsConsoles" parent="." instance=ExtResource("15_ht5p6")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemLearning" parent="." instance=ExtResource("17_rwp6d")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemAssets" parent="." instance=ExtResource("16_06oxa")]
+visible = false
+layout_mode = 1
