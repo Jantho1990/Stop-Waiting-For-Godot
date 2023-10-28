@@ -1,6 +1,7 @@
 extends Camera3D
 
 @export var use_auto := false
+@export var playerNode: Node
 
 # Quad mesh position
 var quad_mesh_position = Vector3(0, 7.309, -8.559)  # Replace with the actual position of your quad mesh
@@ -13,15 +14,35 @@ var focal_length = 107.51  # 107.51 = 1920x1080
 # Adjust this value to control the zoom level
 var zoom_factor = 1.0  # Increase for zoom in, decrease for zoom out
 
+#var _pos = Vector3(0, 7.309, -5.257)
+var _pos = Vector3(0, 7.309, -5.261)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+  if not fov == focal_length:
+    fov = focal_length
   if use_auto:
     _reposition_camera4()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+  if Input.is_action_just_pressed('interact'):
+    _animate_to_player()
+
+
+func _animate_to_player() -> void:
+  var tween = create_tween().set_parallel(true)
+  tween.tween_property(self, "position", playerNode.parts.camera.global_position, 0.5)
+  tween.tween_property(self, "rotation", playerNode.parts.camera.global_rotation, 0.5)
+  tween.tween_property(self, "fov", playerNode.parts.camera.fov, 0.5)
+  await tween.finished
+  playerNode.parts.camera.make_current()
+  playerNode.freeze = false
+
+
+func _animate_to_target(target_position: Vector3) -> void:
   pass
 
 

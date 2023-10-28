@@ -56,6 +56,7 @@ libraries = {
 shape = SubResource("CapsuleShape3D_phygr")
 
 [node name="hud_camera" type="Camera2D" parent="."]
+visible = false
 
 [node name="crosshair" type="Sprite2D" parent="hud_camera"]
 texture = ExtResource("2_nq3sk")
