@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b54xaa8wc1dkq"]
+[gd_scene load_steps=13 format=3 uid="uid://b54xaa8wc1dkq"]
 
 [ext_resource type="Script" path="res://scenes/MainStage/MainStage.gd" id="1_ota84"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="1_xx7qx"]
 [ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationTest/SWFGPresentationTest.tscn" id="3_e2bul"]
+[ext_resource type="Script" path="res://scenes/MainStage/Camera3D.gd" id="4_xxoim"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov2qa"]
 albedo_color = Color(0.290196, 0.447059, 0.615686, 1)
@@ -54,11 +55,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1173, 0)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+visible = false
 use_collision = true
 height = 13.918
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22806, 0, -5)
+visible = false
 use_collision = true
 height = 13.918
 
@@ -83,7 +86,7 @@ use_collision = true
 height = 13.918
 
 [node name="Presentation" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.89775, -8.55921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.30896, -8.55921)
 
 [node name="SubViewport" type="SubViewport" parent="Presentation"]
 size = Vector2i(1920, 1080)
@@ -91,7 +94,6 @@ size = Vector2i(1920, 1080)
 [node name="SWFGPresentationTest" parent="Presentation/SubViewport" instance=ExtResource("3_e2bul")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Presentation"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.36369, 0)
 mesh = SubResource("QuadMesh_ixm4q")
 surface_material_override/0 = SubResource("StandardMaterial3D_hlkkp")
 
@@ -106,3 +108,9 @@ omni_range = 22.988
 transform = Transform3D(1, 0, 0, 0, 0.657573, 0.753391, 0, -0.753391, 0.657573, 0, 37.8435, 29.9311)
 light_energy = 2.607
 light_indirect_energy = 4.773
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.309, -4.17)
+current = true
+fov = 107.5
+script = ExtResource("4_xxoim")

@@ -22,8 +22,8 @@ var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
-func _ready():
-  parts.camera.current = true
+#func _ready():
+#  parts.camera.current = true
 
 func _process(delta):
   if Input.is_action_pressed("move_sprint"):
