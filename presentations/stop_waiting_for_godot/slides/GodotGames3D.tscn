@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://t36ohlettqw5"]
+[gd_scene load_steps=16 format=3 uid="uid://t36ohlettqw5"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_x7m4n"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_mdqb2"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_3d30k"]
+[ext_resource type="PackedScene" uid="uid://p8wlcoi8pcx" path="res://scenes/VideoWidget3D/VideoWidget3D.tscn" id="4_4e8ui"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_swh2v"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/brotato-release.ogv" id="5_0qqcw"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_aqsmh"]
-[ext_resource type="PackedScene" uid="uid://bso83olhr6sjd" path="res://scenes/Test3D/Test3D.tscn" id="5_c3ksu"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/cassette-beasts-launch.ogv" id="6_nkuph"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/Dome-Keeper-Accolades.ogv" id="7_8nxg3"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/lumencraft-release.ogv" id="8_8uys1"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mdqb2")
@@ -16,6 +20,22 @@ script = ExtResource("3_3d30k")
 animation_duriation = 0.5
 
 [sub_resource type="World3D" id="World3D_eyk47"]
+
+[sub_resource type="Animation" id="Animation_qj47e"]
+resource_name = "test_out_of_frame"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wrapper/DomeKeeper")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 1, 0.7, 1, 0, 0, 1, 1, 1, -5, 0, 5)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ng1i"]
+_data = {
+"test_out_of_frame": SubResource("Animation_qj47e")
+}
 
 [node name="GodotGames3D" type="Control"]
 layout_mode = 3
@@ -47,7 +67,37 @@ handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Test3D" parent="PanelContainer/SubViewportContainer/SubViewport" instance=ExtResource("5_c3ksu")]
+[node name="VideoSlides3D" type="Node3D" parent="PanelContainer/SubViewportContainer/SubViewport"]
+
+[node name="Wrapper" type="Node3D" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="DomeKeeper" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("4_4e8ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+videoStreamResource = ExtResource("7_8nxg3")
+
+[node name="Brotato" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("4_4e8ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
+videoStreamResource = ExtResource("5_0qqcw")
+
+[node name="CasseteBeasts" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("4_4e8ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)
+videoStreamResource = ExtResource("6_nkuph")
+
+[node name="Lumencraft" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("4_4e8ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -3)
+videoStreamResource = ExtResource("8_8uys1")
+
+[node name="Camera3D" type="Camera3D" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
+transform = Transform3D(0.936672, 0, 0.350207, 0, 1, 0, -0.350207, 0, 0.936672, 1.06671, 0, 3.67467)
+
+[node name="OffscreenTarget" type="Node3D" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.9441)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
+libraries = {
+"": SubResource("AnimationLibrary_1ng1i")
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -89,10 +139,38 @@ theme_override_constants/margin_right = 64
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Content 1"
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_type_variation = &"AsidePanelEditorBlue"
+
+[node name="DomeKeeper" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/PanelContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/PanelContainer/DomeKeeper"]
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[b]Dome Keeper[/b]"
+fit_content = true
+
+[node name="Desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/PanelContainer/DomeKeeper"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Released: 2022"
+fit_content = true
+
+[node name="Desc2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/PanelContainer/DomeKeeper"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Developed from a game jam game."
+fit_content = true
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("5_aqsmh")]
 layout_mode = 2
