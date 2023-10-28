@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://t36ohlettqw5"]
+[gd_scene load_steps=30 format=3 uid="uid://t36ohlettqw5"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_x7m4n"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_mdqb2"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_3d30k"]
 [ext_resource type="Script" path="res://resources/AnimationPlayStep.gd" id="3_4csvg"]
 [ext_resource type="PackedScene" uid="uid://p8wlcoi8pcx" path="res://scenes/VideoWidget3D/VideoWidget3D.tscn" id="4_4e8ui"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="4_mjs3b"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_swh2v"]
 [ext_resource type="VideoStream" path="res://assets/media/videos/brotato-release.ogv" id="5_0qqcw"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_aqsmh"]
@@ -40,8 +41,19 @@ animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/
 animation_name = "advance_video_4"
 animation_duriation = 0.5
 
-[sub_resource type="Resource" id="Resource_1vcjn"]
+[sub_resource type="Resource" id="Resource_w3854"]
+script = ExtResource("3_4csvg")
+animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
+animation_name = "end_video"
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_fdd1m"]
 script = ExtResource("3_3d30k")
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_bbpph"]
+script = ExtResource("4_mjs3b")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_w3854"), SubResource("Resource_fdd1m")])
 animation_duriation = 0.5
 
 [sub_resource type="World3D" id="World3D_eyk47"]
@@ -255,6 +267,13 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Wrapper/DomeKeeper")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -5, 0, 5)
 
 [sub_resource type="Animation" id="Animation_1ykq6"]
 resource_name = "advance_video_1"
@@ -460,6 +479,20 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Wrapper/DomeKeeper")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -5, 0, 5)
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Wrapper/Brotato")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -5, 0, 5)
 
 [sub_resource type="Animation" id="Animation_5i6fi"]
 resource_name = "RESET"
@@ -564,6 +597,121 @@ tracks/9/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../..:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3oq6r"]
+resource_name = "end_video"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Brotato:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Lumencraft:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wrapper/Lumencraft")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 1, 0.3, 1, 0, 0, 1, 0.7, 1, -5, 0, 5)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/DomeKeeper:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Lumencraft:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/CassetteBeasts:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../..:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Wrapper/DomeKeeper")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -5, 0, 5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Wrapper/Brotato")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -5, 0, 5)
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Wrapper/CassetteBeasts")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -5, 0, 5)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ng1i"]
 _data = {
@@ -572,6 +720,7 @@ _data = {
 "advance_video_2": SubResource("Animation_oqcac"),
 "advance_video_3": SubResource("Animation_ws7bg"),
 "advance_video_4": SubResource("Animation_ucuvo"),
+"end_video": SubResource("Animation_3oq6r"),
 "test_out_of_frame": SubResource("Animation_qj47e")
 }
 
@@ -583,7 +732,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x7m4n")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_n38q5"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_n38q5"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_bbpph")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -603,7 +752,7 @@ own_world_3d = true
 world_3d = SubResource("World3D_eyk47")
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(1152, 664)
 render_target_update_mode = 4
 
 [node name="VideoSlides3D" type="Node3D" parent="PanelContainer/SubViewportContainer/SubViewport"]
@@ -845,7 +994,6 @@ fit_content = true
 
 [node name="Lumencraft" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
 visible = false
-modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(540, 314)
 layout_mode = 2
 size_flags_horizontal = 0

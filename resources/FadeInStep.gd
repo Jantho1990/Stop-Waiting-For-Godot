@@ -16,6 +16,7 @@ func _kill_tween() -> void:
 
 
 func next() -> void:
+  step_next_began.emit()
   _slideTween = slide.create_tween().set_parallel(true)
   for targetNodePath in targetNodes:
     var targetNode = slide.get_node(targetNodePath)
@@ -24,9 +25,11 @@ func next() -> void:
   await _slideTween.finished
 #  print('DBG: next finished %s' % [targetNodes[0].modulate])
   _slideTween = null
+  step_next_ended.emit()
   
   
 func previous() -> void:
+  step_previous_began.emit()  
   if _slideTween:
     _kill_tween()
   _slideTween = slide.create_tween().set_parallel(true)
@@ -35,3 +38,4 @@ func previous() -> void:
     _slideTween.tween_property(targetNode, "modulate", FADE_IN_COLOR_BEGIN, animation_duriation).from(FADE_IN_COLOR_END)
   await _slideTween.finished
   _slideTween = null
+  step_previous_ended.emit()  

@@ -30,6 +30,7 @@ func _kill_tween() -> void:
 # Runs when the slide moves to the next step.
 # Interface function. Must be replaced by inhereting resources.
 func next() -> void:
+  step_next_began.emit()
   if _slideTween:
     _kill_tween()
   
@@ -39,11 +40,13 @@ func next() -> void:
   
   await _slideTween.finished
   _slideTween = null
+  step_next_ended.emit()
   
   
 # Runs when the slide moves to the previous step.
 # Interface function. Must be replaced by inhereting resources.  
 func previous() -> void:
+  step_previous_began.emit()
   if _slideTween:
     _kill_tween()
   
@@ -53,3 +56,4 @@ func previous() -> void:
   
   await _slideTween.finished
   _slideTween = null
+  step_previous_ended.emit()

@@ -24,6 +24,7 @@ func _kill_tween() -> void:
 
 
 func next() -> void:
+  step_next_began.emit()
   if _slideTween:
     _kill_tween()
   
@@ -48,8 +49,11 @@ func next() -> void:
   _slideTween = null
   _stabilizeTween = null
   
+  step_next_ended.emit()
+  
   
 func previous() -> void:
+  step_previous_began.emit()
   if _slideTween:
     _kill_tween()
   
@@ -73,3 +77,5 @@ func previous() -> void:
   
   _slideTween = null
   _stabilizeTween = null
+  
+  step_previous_ended.emit()
