@@ -55,12 +55,23 @@ func _physics_process(delta):
     parts.camera_animation.play("reset", 0.5)
 
   move_and_slide()
+  
+  if _is_joypad_right_stick():
+    _look_with_joypad_right_stick()
 
 func _input(event):
   if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
     parts.head.rotation_degrees.y -= event.relative.x * sensitivity
     parts.head.rotation_degrees.x -= event.relative.y * sensitivity
     parts.head.rotation.x = clamp(parts.head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+func _look_with_joypad_right_stick() -> void:
+    parts.head.rotation_degrees.y -= Input.get_axis("look_left", "look_right") * 30 * sensitivity
+    parts.head.rotation_degrees.x -= Input.get_axis("look_down", "look_up") * 30 * sensitivity
+    parts.head.rotation.x = clamp(parts.head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+func _is_joypad_right_stick() -> bool:
+  return Input.is_action_pressed("look_down") or Input.is_action_pressed("look_left") or Input.is_action_pressed("look_right") or Input.is_action_pressed("look_up")
 
 func _on_pause():
   pass
