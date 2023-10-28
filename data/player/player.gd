@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var jump_velocity = 4
 @export var sensitivity = 0.1
 @export var accel = 10
+@export var use_gravity := true
 var speed = base_speed
 var sprinting = false
 var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
@@ -35,7 +36,7 @@ func _process(delta):
     parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[0], 10*delta)
 
 func _physics_process(delta):
-  if not is_on_floor():
+  if use_gravity and not is_on_floor():
     velocity.y -= gravity * delta
 
   if Input.is_action_pressed("move_jump") and is_on_floor():

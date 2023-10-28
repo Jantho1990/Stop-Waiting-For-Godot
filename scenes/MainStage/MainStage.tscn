@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b54xaa8wc1dkq"]
+[gd_scene load_steps=12 format=3 uid="uid://b54xaa8wc1dkq"]
 
 [ext_resource type="Script" path="res://scenes/MainStage/MainStage.gd" id="1_ota84"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="1_xx7qx"]
@@ -29,6 +29,8 @@ viewport_path = NodePath("Presentation/SubViewport")
 resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_qjsk5")
+
+[sub_resource type="Environment" id="Environment_k4gj0"]
 
 [node name="MainStage" type="Node3D"]
 script = ExtResource("1_ota84")
@@ -92,3 +94,15 @@ size = Vector2i(1920, 1080)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.36369, 0)
 mesh = SubResource("QuadMesh_ixm4q")
 surface_material_override/0 = SubResource("StandardMaterial3D_hlkkp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k4gj0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3649, 0)
+omni_range = 22.988
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.657573, 0.753391, 0, -0.753391, 0.657573, 0, 37.8435, 29.9311)
+light_energy = 2.607
+light_indirect_energy = 4.773
