@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bso83olhr6sjd"]
+
+[ext_resource type="PackedScene" uid="uid://dwxfjq6wuen3" path="res://scenes/Test3D/test_ui.tscn" id="1_l8urh"]
+[ext_resource type="PackedScene" uid="uid://bc4ikg5h64jmf" path="res://scenes/Test3D/TestVideo.tscn" id="2_5qj6e"]
+
+[node name="Test3D" type="Node3D"]
+
+[node name="TestUI" parent="." instance=ExtResource("1_l8urh")]
+
+[node name="TestUI2" parent="." instance=ExtResource("1_l8urh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.0326)
+
+[node name="TestVideo" parent="." instance=ExtResource("2_5qj6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.39971)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.790401, 0, 0.61259, -0.0801074, 0.991413, 0.10336, -0.607329, -0.130768, 0.783614, 2.10255, -0.178814, 3.75113)

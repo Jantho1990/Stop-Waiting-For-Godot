@@ -66,6 +66,7 @@ theme_override_styles/separator = ExtResource("4_erqxn")
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
 
 [node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
 layout_mode = 2
