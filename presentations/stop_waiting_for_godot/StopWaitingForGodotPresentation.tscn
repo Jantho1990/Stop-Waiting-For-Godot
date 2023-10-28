@@ -29,11 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qwp1m")
 
-[node name="GodotGames3D" parent="." instance=ExtResource("2_ypekr")]
-layout_mode = 1
-
 [node name="WhoAreYou" parent="." instance=ExtResource("2_4cyv6")]
-visible = false
 layout_mode = 1
 
 [node name="IntroducingGodotEngine" parent="." instance=ExtResource("3_us3kw")]
@@ -45,6 +41,10 @@ visible = false
 layout_mode = 1
 
 [node name="WhatIsMyTalk" parent="." instance=ExtResource("5_v7d3j")]
+visible = false
+layout_mode = 1
+
+[node name="GodotGames3D" parent="." instance=ExtResource("2_ypekr")]
 visible = false
 layout_mode = 1
 

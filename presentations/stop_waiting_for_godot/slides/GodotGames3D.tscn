@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://t36ohlettqw5"]
+[gd_scene load_steps=26 format=3 uid="uid://t36ohlettqw5"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_x7m4n"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_mdqb2"]
@@ -14,6 +14,12 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mdqb2")
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_n38q5"]
+script = ExtResource("3_4csvg")
+animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
+animation_name = "advance_video_1"
 animation_duriation = 0.5
 
 [sub_resource type="Resource" id="Resource_b7x7y"]
@@ -252,6 +258,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_1ykq6"]
 resource_name = "advance_video_1"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -259,10 +266,10 @@ tracks/0/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Do
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -351,6 +358,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../..:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ucuvo"]
@@ -442,8 +461,113 @@ tracks/7/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_5i6fi"]
+resource_name = "RESET"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/DomeKeeper:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/DomeKeeper:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Brotato:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Brotato:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wrapper/DomeKeeper")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 1)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Wrapper/Brotato")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 1, 1, -1)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Wrapper/CassetteBeasts")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 2, 2, -2)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Wrapper/Lumencraft")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 3, 3, -3)
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/CassetteBeasts:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Lumencraft:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ng1i"]
 _data = {
+"RESET": SubResource("Animation_5i6fi"),
 "advance_video_1": SubResource("Animation_1ykq6"),
 "advance_video_2": SubResource("Animation_oqcac"),
 "advance_video_3": SubResource("Animation_ws7bg"),
@@ -459,7 +583,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x7m4n")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_n38q5"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_1vcjn")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -470,6 +594,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="PanelContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 stretch = true
 
@@ -555,6 +680,7 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="DomeKeeper" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+visible = false
 custom_minimum_size = Vector2(540, 314)
 layout_mode = 2
 size_flags_horizontal = 0
