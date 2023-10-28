@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b54xaa8wc1dkq"]
+[gd_scene load_steps=14 format=3 uid="uid://b54xaa8wc1dkq"]
 
 [ext_resource type="Script" path="res://scenes/MainStage/MainStage.gd" id="1_ota84"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="1_xx7qx"]
 [ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationTest/SWFGPresentationTest.tscn" id="3_e2bul"]
 [ext_resource type="Script" path="res://scenes/MainStage/Camera3D.gd" id="4_xxoim"]
+[ext_resource type="Script" path="res://scenes/MainStage/InteractionCamera.gd" id="5_6o63g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov2qa"]
 albedo_color = Color(0.290196, 0.447059, 0.615686, 1)
@@ -128,9 +129,14 @@ transform = Transform3D(1, 0, 0, 0, 0.657573, 0.753391, 0, -0.753391, 0.657573, 
 light_energy = 2.607
 light_indirect_energy = 4.773
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("playerNode")]
+[node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.309, -5.261)
 current = true
 fov = 107.5
 script = ExtResource("4_xxoim")
+
+[node name="InteractionCamera" type="Camera3D" parent="." node_paths=PackedStringArray("playerNode", "presentationCamera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.309, -5.261)
+script = ExtResource("5_6o63g")
 playerNode = NodePath("../player")
+presentationCamera = NodePath("../Camera3D")
