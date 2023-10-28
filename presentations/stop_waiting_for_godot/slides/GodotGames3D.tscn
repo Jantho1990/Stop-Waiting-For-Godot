@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://t36ohlettqw5"]
+[gd_scene load_steps=17 format=3 uid="uid://t36ohlettqw5"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_x7m4n"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_mdqb2"]
@@ -32,8 +32,12 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 1, 0.7, 1, 0, 0, 1, 1, 1, -5, 0, 5)
 
+[sub_resource type="Animation" id="Animation_oqcac"]
+resource_name = "advance_video_2"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ng1i"]
 _data = {
+"advance_video_2": SubResource("Animation_oqcac"),
 "test_out_of_frame": SubResource("Animation_qj47e")
 }
 
@@ -138,25 +142,27 @@ theme_override_constants/margin_right = 64
 [node name="VBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 32
+alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
-custom_minimum_size = Vector2(360, 0)
+[node name="DomeKeeper" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+custom_minimum_size = Vector2(540, 314)
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 3
+size_flags_vertical = 4
 theme_type_variation = &"AsidePanelEditorBlue"
 
-[node name="DomeKeeper" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/PanelContainer"]
+[node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/DomeKeeper"]
 layout_mode = 2
+size_flags_vertical = 4
 
-[node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/PanelContainer/DomeKeeper"]
+[node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/DomeKeeper/List"]
 layout_mode = 2
 theme_override_font_sizes/bold_font_size = 36
 bbcode_enabled = true
 text = "[b]Dome Keeper[/b]"
 fit_content = true
 
-[node name="Desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/PanelContainer/DomeKeeper"]
+[node name="Desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/DomeKeeper/List"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 36
@@ -164,12 +170,67 @@ bbcode_enabled = true
 text = "Released: 2022"
 fit_content = true
 
-[node name="Desc2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/PanelContainer/DomeKeeper"]
+[node name="Desc2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/DomeKeeper/List"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 36
 bbcode_enabled = true
-text = "Developed from a game jam game."
+text = "Developer: Bippenbits"
+fit_content = true
+
+[node name="Desc3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/DomeKeeper/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Platforms:
+[ul]PC (Windows, Mac, Linux)[/ul]"
+fit_content = true
+
+[node name="Brotato" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
+visible = false
+custom_minimum_size = Vector2(540, 314)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_type_variation = &"AsidePanelEditorBlue"
+
+[node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Brotato"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Brotato/List"]
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[b]Brotato[/b]"
+fit_content = true
+
+[node name="Desc" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Brotato/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Released: 2023"
+fit_content = true
+
+[node name="Desc2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Brotato/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Developer: Blobfish Games"
+fit_content = true
+
+[node name="Desc3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Brotato/List"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "Platforms:
+[ul]PC (Windows, Mac, Linux)[/ul]
+[ul]Mobile (iOS, Android)[/ul]
+[ul]Switch"
 fit_content = true
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("5_aqsmh")]
