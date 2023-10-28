@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://t36ohlettqw5"]
+[gd_scene load_steps=24 format=3 uid="uid://t36ohlettqw5"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_x7m4n"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_mdqb2"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_3d30k"]
+[ext_resource type="Script" path="res://resources/AnimationPlayStep.gd" id="3_4csvg"]
 [ext_resource type="PackedScene" uid="uid://p8wlcoi8pcx" path="res://scenes/VideoWidget3D/VideoWidget3D.tscn" id="4_4e8ui"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_swh2v"]
 [ext_resource type="VideoStream" path="res://assets/media/videos/brotato-release.ogv" id="5_0qqcw"]
@@ -13,6 +14,24 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mdqb2")
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_b7x7y"]
+script = ExtResource("3_4csvg")
+animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
+animation_name = "advance_video_2"
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_wufar"]
+script = ExtResource("3_4csvg")
+animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
+animation_name = "advance_video_3"
+animation_duriation = 0.5
+
+[sub_resource type="Resource" id="Resource_vaecg"]
+script = ExtResource("3_4csvg")
+animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
+animation_name = "advance_video_4"
 animation_duriation = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
@@ -53,10 +72,10 @@ tracks/1/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Do
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -65,10 +84,10 @@ tracks/2/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Br
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -156,10 +175,10 @@ tracks/1/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Br
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -168,10 +187,10 @@ tracks/2/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Ca
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -367,10 +386,10 @@ tracks/2/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Ca
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, true, false]
 }
 tracks/3/type = "position_3d"
 tracks/3/imported = false
@@ -405,10 +424,10 @@ tracks/6/path = NodePath("../../../MarginContainer/VBox/MarginContainer2/VBox/Lu
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false, true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -440,7 +459,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x7m4n")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_1vcjn")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
