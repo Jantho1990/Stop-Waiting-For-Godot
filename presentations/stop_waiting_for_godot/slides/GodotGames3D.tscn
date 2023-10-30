@@ -788,7 +788,7 @@ own_world_3d = true
 world_3d = SubResource("World3D_eyk47")
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="VideoSlides3D" type="Node3D" parent="PanelContainer/SubViewportContainer/SubViewport"]
