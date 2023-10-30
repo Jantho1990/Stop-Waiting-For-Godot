@@ -15,7 +15,7 @@ animation_duriation = 0.5
 script = ExtResource("3_hbf8g")
 animation_duriation = 0.5
 
-[node name="BasicTitleCardTemplate" type="Control"]
+[node name="TitleWhyGodot" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,7 +77,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 264
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer"]
-custom_minimum_size = Vector2(0, 280)
+custom_minimum_size = Vector2(0, 235)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4

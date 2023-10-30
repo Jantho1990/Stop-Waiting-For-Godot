@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://brtqwto1mgfvj"]
+[gd_scene load_steps=28 format=3 uid="uid://brtqwto1mgfvj"]
 
 [ext_resource type="Script" path="res://nodes/Presentation.gd" id="1_qwp1m"]
 [ext_resource type="PackedScene" uid="uid://n0jie61s1qrc" path="res://presentations/stop_waiting_for_godot/slides/WhoAreYou.tscn" id="2_4cyv6"]
@@ -10,16 +10,23 @@
 [ext_resource type="PackedScene" uid="uid://dk54xyvfb1os4" path="res://presentations/stop_waiting_for_godot/slides/GodotHistory.tscn" id="6_d336g"]
 [ext_resource type="PackedScene" uid="uid://t78fslafkw7s" path="res://presentations/stop_waiting_for_godot/slides/OpenSourceSoftware.tscn" id="7_ji8mb"]
 [ext_resource type="PackedScene" uid="uid://ccjo3vakb25i" path="res://presentations/stop_waiting_for_godot/slides/Funding.tscn" id="8_50k6i"]
+[ext_resource type="PackedScene" uid="uid://d1mokbu71lip4" path="res://presentations/stop_waiting_for_godot/slides/TitleWhatIsGodot.tscn" id="8_b2ria"]
 [ext_resource type="PackedScene" uid="uid://cyrdlrtt8amva" path="res://presentations/stop_waiting_for_godot/slides/OrganizationalStructure.tscn" id="9_w46tj"]
 [ext_resource type="PackedScene" uid="uid://dxj12d5goaywq" path="res://presentations/stop_waiting_for_godot/slides/DownloadingTheEngine.tscn" id="10_ong8w"]
 [ext_resource type="PackedScene" uid="uid://cc33b1lhevig8" path="res://presentations/stop_waiting_for_godot/slides/VersionComparison.tscn" id="11_bwcrq"]
 [ext_resource type="PackedScene" uid="uid://sa1lkwdxqfqt" path="res://presentations/stop_waiting_for_godot/slides/SupportedOS.tscn" id="12_0yuxa"]
 [ext_resource type="PackedScene" uid="uid://cemt1nywye2g8" path="res://presentations/stop_waiting_for_godot/slides/DevelopingAGame.tscn" id="13_cmsgu"]
+[ext_resource type="PackedScene" uid="uid://cvxrmrm0xm2vl" path="res://presentations/stop_waiting_for_godot/slides/TitleGettingStarted.tscn" id="13_ntdbm"]
 [ext_resource type="PackedScene" uid="uid://vbm3y2n6466n" path="res://presentations/stop_waiting_for_godot/slides/ReleaseTargets.tscn" id="14_kma21"]
 [ext_resource type="PackedScene" uid="uid://b3d1jsp5xgig7" path="res://presentations/stop_waiting_for_godot/slides/ReleaseTargetsConsoles.tscn" id="15_ht5p6"]
 [ext_resource type="PackedScene" uid="uid://bw4c5y8ekyw1i" path="res://presentations/stop_waiting_for_godot/slides/EcosystemAssets.tscn" id="16_06oxa"]
 [ext_resource type="PackedScene" uid="uid://bw7je5p1y6unm" path="res://presentations/stop_waiting_for_godot/slides/EcosystemLearning.tscn" id="17_rwp6d"]
 [ext_resource type="PackedScene" uid="uid://08b4e853v7hq" path="res://presentations/stop_waiting_for_godot/slides/EcosystemCompanies.tscn" id="18_itb5m"]
+[ext_resource type="PackedScene" uid="uid://b6si2jmde62u6" path="res://presentations/stop_waiting_for_godot/slides/TitleOverviewByExample.tscn" id="23_rkwlr"]
+[ext_resource type="PackedScene" uid="uid://b4s1j0tcjyxhb" path="res://presentations/stop_waiting_for_godot/slides/TitleDeeperDiveSWFG.tscn" id="24_x8bub"]
+[ext_resource type="PackedScene" uid="uid://clfegfg576kj" path="res://presentations/stop_waiting_for_godot/slides/TitleDeeperDiveDT.tscn" id="25_lfyb6"]
+[ext_resource type="PackedScene" uid="uid://d066yjjjq2hwd" path="res://presentations/stop_waiting_for_godot/slides/TitleConclusion.tscn" id="26_2h8ge"]
+[ext_resource type="PackedScene" uid="uid://dku1gacrgwjdk" path="res://presentations/stop_waiting_for_godot/slides/TitleThankYou.tscn" id="27_t5c83"]
 
 [node name="StopWaitingForGodotPresentation" type="Control"]
 layout_mode = 3
@@ -45,11 +52,15 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="BasicTitleCardTemplate" parent="." instance=ExtResource("6_a3esq")]
+[node name="TitleWhyGodot" parent="." instance=ExtResource("6_a3esq")]
 visible = false
 layout_mode = 1
 
 [node name="GodotGames3D" parent="." instance=ExtResource("2_ypekr")]
+visible = false
+layout_mode = 1
+
+[node name="TitleWhatIsGodot" parent="." instance=ExtResource("8_b2ria")]
 visible = false
 layout_mode = 1
 
@@ -66,6 +77,10 @@ visible = false
 layout_mode = 1
 
 [node name="OrganizationalStructure" parent="." instance=ExtResource("9_w46tj")]
+visible = false
+layout_mode = 1
+
+[node name="TitleGettingStarted" parent="." instance=ExtResource("13_ntdbm")]
 visible = false
 layout_mode = 1
 
@@ -102,5 +117,25 @@ visible = false
 layout_mode = 1
 
 [node name="EcosystemCompanies" parent="." instance=ExtResource("18_itb5m")]
+visible = false
+layout_mode = 1
+
+[node name="TitleOverviewByExample" parent="." instance=ExtResource("23_rkwlr")]
+visible = false
+layout_mode = 1
+
+[node name="TitleDeeperDiveSWFG" parent="." instance=ExtResource("24_x8bub")]
+visible = false
+layout_mode = 1
+
+[node name="TitleDeeperDiveDT" parent="." instance=ExtResource("25_lfyb6")]
+visible = false
+layout_mode = 1
+
+[node name="TitleConclusion" parent="." instance=ExtResource("26_2h8ge")]
+visible = false
+layout_mode = 1
+
+[node name="TitleThankYou" parent="." instance=ExtResource("27_t5c83")]
 visible = false
 layout_mode = 1
