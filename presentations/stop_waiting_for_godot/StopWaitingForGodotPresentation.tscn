@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://brtqwto1mgfvj"]
+[gd_scene load_steps=31 format=3 uid="uid://brtqwto1mgfvj"]
 
 [ext_resource type="Script" path="res://nodes/Presentation.gd" id="1_qwp1m"]
 [ext_resource type="PackedScene" uid="uid://djat1tin5gf31" path="res://presentations/stop_waiting_for_godot/slides/GodotApps3D.tscn" id="2_1cd00"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d1mokbu71lip4" path="res://presentations/stop_waiting_for_godot/slides/TitleWhatIsGodot.tscn" id="8_b2ria"]
 [ext_resource type="PackedScene" uid="uid://cyrdlrtt8amva" path="res://presentations/stop_waiting_for_godot/slides/OrganizationalStructure.tscn" id="9_w46tj"]
 [ext_resource type="PackedScene" uid="uid://dxj12d5goaywq" path="res://presentations/stop_waiting_for_godot/slides/DownloadingTheEngine.tscn" id="10_ong8w"]
+[ext_resource type="PackedScene" uid="uid://bfmb3vlqc0vqj" path="res://presentations/stop_waiting_for_godot/slides/AndEven.tscn" id="10_sjf76"]
 [ext_resource type="PackedScene" uid="uid://cc33b1lhevig8" path="res://presentations/stop_waiting_for_godot/slides/VersionComparison.tscn" id="11_bwcrq"]
 [ext_resource type="PackedScene" uid="uid://sa1lkwdxqfqt" path="res://presentations/stop_waiting_for_godot/slides/SupportedOS.tscn" id="12_0yuxa"]
 [ext_resource type="PackedScene" uid="uid://cemt1nywye2g8" path="res://presentations/stop_waiting_for_godot/slides/DevelopingAGame.tscn" id="13_cmsgu"]
@@ -67,6 +68,10 @@ visible = false
 layout_mode = 1
 
 [node name="GodotApps3D" parent="." instance=ExtResource("2_1cd00")]
+visible = false
+layout_mode = 1
+
+[node name="AndEven" parent="." instance=ExtResource("10_sjf76")]
 visible = false
 layout_mode = 1
 
