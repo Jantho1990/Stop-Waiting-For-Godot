@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://p8wlcoi8pcx" path="res://scenes/VideoWidget3D/VideoWidget3D.tscn" id="4_4e8ui"]
 [ext_resource type="Script" path="res://resources/MultiStep.gd" id="4_mjs3b"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_swh2v"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/brotato-release.ogv" id="5_0qqcw"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_aqsmh"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/cassette-beasts-launch.ogv" id="6_nkuph"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/Dome-Keeper-Accolades.ogv" id="7_8nxg3"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/lumencraft-release.ogv" id="8_8uys1"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/dome-keeper-accolades-854x480.ogv" id="7_bfwl4"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/brotato-release-854x480.ogv" id="8_7g36d"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/cassette-beasts-launch-854x480.ogv" id="9_2pjt8"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/lumencraft-release-854x480.ogv" id="10_e5ohr"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mdqb2")
@@ -798,19 +798,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="DomeKeeper" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("4_4e8ui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-videoStreamResource = ExtResource("7_8nxg3")
+videoStreamResource = ExtResource("7_bfwl4")
 
 [node name="Brotato" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("4_4e8ui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-videoStreamResource = ExtResource("5_0qqcw")
+videoStreamResource = ExtResource("8_7g36d")
 
 [node name="CassetteBeasts" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("4_4e8ui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)
-videoStreamResource = ExtResource("6_nkuph")
+videoStreamResource = ExtResource("9_2pjt8")
 
 [node name="Lumencraft" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("4_4e8ui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -3)
-videoStreamResource = ExtResource("8_8uys1")
+videoStreamResource = ExtResource("10_e5ohr")
 
 [node name="Camera3D" type="Camera3D" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
 transform = Transform3D(0.936672, 0, 0.350207, 0, 1, 0, -0.350207, 0, 0.936672, 1.06671, 0, 3.67467)

@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://resources/MultiStep.gd" id="4_piqbf"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="5_qxe4d"]
 [ext_resource type="PackedScene" uid="uid://p8wlcoi8pcx" path="res://scenes/VideoWidget3D/VideoWidget3D.tscn" id="6_olju8"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/rpg-in-a-box.ogv" id="7_qf7mp"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/pixelorama-0.9.ogv" id="8_t7712"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/rpg-in-a-box-854x480.ogv" id="7_4hcn5"]
+[ext_resource type="VideoStream" path="res://assets/media/videos/pixelorama-0.9-854x480.ogv" id="8_dj0no"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="11_oo15e"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="12_5isnh"]
 
@@ -331,11 +331,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="RPGInABox" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("6_olju8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-videoStreamResource = ExtResource("7_qf7mp")
+videoStreamResource = ExtResource("7_4hcn5")
 
 [node name="Pixelorama" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/Wrapper" instance=ExtResource("6_olju8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-videoStreamResource = ExtResource("8_t7712")
+videoStreamResource = ExtResource("8_dj0no")
 
 [node name="Camera3D" type="Camera3D" parent="PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D"]
 transform = Transform3D(0.936672, 0, 0.350207, 0, 1, 0, -0.350207, 0, 0.936672, 1.06671, 0, 3.67467)
