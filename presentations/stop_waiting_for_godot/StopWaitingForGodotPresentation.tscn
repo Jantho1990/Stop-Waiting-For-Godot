@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://brtqwto1mgfvj"]
+[gd_scene load_steps=33 format=3 uid="uid://brtqwto1mgfvj"]
 
 [ext_resource type="Script" path="res://nodes/Presentation.gd" id="1_qwp1m"]
 [ext_resource type="PackedScene" uid="uid://djat1tin5gf31" path="res://presentations/stop_waiting_for_godot/slides/GodotApps3D.tscn" id="2_1cd00"]
@@ -26,9 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://bw7je5p1y6unm" path="res://presentations/stop_waiting_for_godot/slides/EcosystemLearning.tscn" id="17_rwp6d"]
 [ext_resource type="PackedScene" uid="uid://08b4e853v7hq" path="res://presentations/stop_waiting_for_godot/slides/EcosystemCompanies.tscn" id="18_itb5m"]
 [ext_resource type="PackedScene" uid="uid://b6si2jmde62u6" path="res://presentations/stop_waiting_for_godot/slides/TitleOverviewByExample.tscn" id="23_rkwlr"]
+[ext_resource type="PackedScene" uid="uid://bcpu0a4clf1cr" path="res://presentations/stop_waiting_for_godot/slides/EcosystemIssues.tscn" id="24_fo040"]
 [ext_resource type="PackedScene" uid="uid://b4s1j0tcjyxhb" path="res://presentations/stop_waiting_for_godot/slides/TitleDeeperDiveSWFG.tscn" id="24_x8bub"]
 [ext_resource type="PackedScene" uid="uid://clfegfg576kj" path="res://presentations/stop_waiting_for_godot/slides/TitleDeeperDiveDT.tscn" id="25_lfyb6"]
 [ext_resource type="PackedScene" uid="uid://d066yjjjq2hwd" path="res://presentations/stop_waiting_for_godot/slides/TitleConclusion.tscn" id="26_2h8ge"]
+[ext_resource type="PackedScene" uid="uid://bj2tv6tqsblpc" path="res://presentations/stop_waiting_for_godot/slides/TitleEcosystem.tscn" id="26_ma6yq"]
 [ext_resource type="PackedScene" uid="uid://dku1gacrgwjdk" path="res://presentations/stop_waiting_for_godot/slides/TitleThankYou.tscn" id="27_t5c83"]
 
 [node name="StopWaitingForGodotPresentation" type="Control"]
@@ -123,18 +125,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="EcosystemLearning" parent="." instance=ExtResource("17_rwp6d")]
-visible = false
-layout_mode = 1
-
-[node name="EcosystemAssets" parent="." instance=ExtResource("16_06oxa")]
-visible = false
-layout_mode = 1
-
-[node name="EcosystemCompanies" parent="." instance=ExtResource("18_itb5m")]
-visible = false
-layout_mode = 1
-
 [node name="TitleOverviewByExample" parent="." instance=ExtResource("23_rkwlr")]
 visible = false
 layout_mode = 1
@@ -144,6 +134,26 @@ visible = false
 layout_mode = 1
 
 [node name="TitleDeeperDiveDT" parent="." instance=ExtResource("25_lfyb6")]
+visible = false
+layout_mode = 1
+
+[node name="TitleEcosystem" parent="." instance=ExtResource("26_ma6yq")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemLearning" parent="." instance=ExtResource("17_rwp6d")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemIssues" parent="." instance=ExtResource("24_fo040")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemAssets" parent="." instance=ExtResource("16_06oxa")]
+visible = false
+layout_mode = 1
+
+[node name="EcosystemCompanies" parent="." instance=ExtResource("18_itb5m")]
 visible = false
 layout_mode = 1
 
