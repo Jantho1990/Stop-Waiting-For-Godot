@@ -14,3 +14,4 @@ script = ExtResource("1_x5bj5")
 
 [node name="StopWaitingForGodotPresentation" parent="." instance=ExtResource("2_jqsre")]
 layout_mode = 1
+close_on_finish = false

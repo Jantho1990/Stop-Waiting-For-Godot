@@ -4,9 +4,10 @@ extends Control
 signal finished
 
 
-@export var slides: Array[PresentationSlide] : get = _get_slides
+@export var close_on_finish := true
 
 var currentSlide : PresentationSlide
+var slides: Array[PresentationSlide] : get = _get_slides
 
 
 func _on_SlideNode_finished() -> void:
@@ -15,7 +16,8 @@ func _on_SlideNode_finished() -> void:
   
   _deactivate_slide(currentSlide)
   if currentSlide.get_index() == self.slides.size() - 1:
-    _finish()
+    if close_on_finish:
+      _finish()
     return
   currentSlide = self.slides[currentSlide.get_index() + 1]
   _activate_slide(currentSlide)
