@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/OldMainStage/OldMainStage.gd" id="1_2llv0"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="2_lumad"]
-[ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationTest/SWFGPresentationTest.tscn" id="3_dpxcc"]
+[ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationLauncher/SWFGPresentationLauncher.tscn" id="3_dpxcc"]
 [ext_resource type="Script" path="res://scenes/OldMainStage/Camera3D.gd" id="4_6ttve"]
 [ext_resource type="Script" path="res://scenes/MainStage/InteractionCamera.gd" id="5_ygybj"]
 

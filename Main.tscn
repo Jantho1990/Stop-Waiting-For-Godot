@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://4ii5pqg6cy81"]
 
-[ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationTest/SWFGPresentationTest.tscn" id="1_6bxt2"]
+[ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationLauncher/SWFGPresentationLauncher.tscn" id="1_6bxt2"]
 
 [sub_resource type="Environment" id="Environment_56ksq"]
 

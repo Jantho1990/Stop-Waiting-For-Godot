@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="3_cmu2n"]
 [ext_resource type="PackedScene" uid="uid://fia80f2s15bw" path="res://assets/models/tree_arbol/arbol_seco.blend" id="4_gk368"]
 [ext_resource type="PackedScene" uid="uid://efn840pdpyf3" path="res://assets/models/bench/bench.blend" id="5_p3rbw"]
-[ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationTest/SWFGPresentationTest.tscn" id="6_don10"]
+[ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationLauncher/SWFGPresentationLauncher.tscn" id="6_don10"]
 [ext_resource type="Script" path="res://scenes/OldMainStage/Camera3D.gd" id="7_oq33f"]
 [ext_resource type="Script" path="res://scenes/MainStage/InteractionCamera.gd" id="8_crlvf"]
 
@@ -136,7 +136,7 @@ transform = Transform3D(-0.604822, 0, -0.796361, 0, 1, 0, 0.796361, 0, -0.604822
 [node name="SubViewport" type="SubViewport" parent="Presentation"]
 size = Vector2i(1920, 1080)
 
-[node name="SWFGPresentationTest" parent="Presentation/SubViewport" instance=ExtResource("6_don10")]
+[node name="SWFGPresentationLauncher" parent="Presentation/SubViewport" instance=ExtResource("6_don10")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Presentation"]
 mesh = SubResource("QuadMesh_1lygh")
