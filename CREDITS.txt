@@ -3,3 +3,4 @@ CREDITS
 ART
 Kenney Game Icons
 low-poly tree: https://opengameart.org/content/tree-dry-lowpoly
+park bench: https://opengameart.org/content/park-bench

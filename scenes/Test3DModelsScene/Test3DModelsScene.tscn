@@ -80,6 +80,11 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
+[node name="SWFGFramingCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.390731, 0.284452, 0.875452, 0, 0.951057, -0.309017, -0.920505, 0.120743, 0.371607, -0.296, 1.088, -1.142)
+current = true
+fov = 59.0
+
 [node name="GrassBase2" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_30c5b")
 
@@ -102,7 +107,7 @@ mesh = SubResource("ArrayMesh_5qxnj")
 skeleton = NodePath("")
 
 [node name="player" parent="." instance=ExtResource("2_sp6q6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88916, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93417, 1.88916, 0)
 
 [node name="arbol_seco" parent="." instance=ExtResource("4_iramj")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -6.98959, -2.38419e-07, 1.06086)
