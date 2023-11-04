@@ -46,6 +46,7 @@ script = ExtResource("1_u1w3t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="camera" type="Camera3D" parent="head"]
+current = true
 
 [node name="camera_animation" type="AnimationPlayer" parent="head/camera"]
 libraries = {
