@@ -131,18 +131,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="TitleOverviewByExample" parent="." instance=ExtResource("23_rkwlr")]
-visible = false
-layout_mode = 1
-
-[node name="TitleDeeperDiveSWFG" parent="." instance=ExtResource("24_x8bub")]
-visible = false
-layout_mode = 1
-
-[node name="TitleDeeperDiveDT" parent="." instance=ExtResource("25_lfyb6")]
-visible = false
-layout_mode = 1
-
 [node name="TitleEcosystem" parent="." instance=ExtResource("26_ma6yq")]
 visible = false
 layout_mode = 1
@@ -160,6 +148,18 @@ visible = false
 layout_mode = 1
 
 [node name="EcosystemCompanies" parent="." instance=ExtResource("18_itb5m")]
+visible = false
+layout_mode = 1
+
+[node name="TitleOverviewByExample" parent="." instance=ExtResource("23_rkwlr")]
+visible = false
+layout_mode = 1
+
+[node name="TitleDeeperDiveSWFG" parent="." instance=ExtResource("24_x8bub")]
+visible = false
+layout_mode = 1
+
+[node name="TitleDeeperDiveDT" parent="." instance=ExtResource("25_lfyb6")]
 visible = false
 layout_mode = 1
 
