@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cs7wbuw84f87u"]
+[gd_scene load_steps=16 format=3 uid="uid://cs7wbuw84f87u"]
 
 [ext_resource type="Material" uid="uid://egpru16uvbme" path="res://assets/grass/Stylized3DGrass.tres" id="1_afbah"]
 [ext_resource type="Script" path="res://scenes/Test3DModelsScene/Test3DModelsScene.gd" id="1_kq762"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="2_sp6q6"]
+[ext_resource type="PackedScene" uid="uid://fia80f2s15bw" path="res://assets/models/tree_arbol/arbol_seco.blend" id="4_iramj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6sp7b"]
 ground_bottom_color = Color(0.113725, 0.133333, 0.160784, 1)
@@ -101,3 +102,6 @@ skeleton = NodePath("")
 
 [node name="player" parent="." instance=ExtResource("2_sp6q6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88916, 0)
+
+[node name="arbol_seco" parent="." instance=ExtResource("4_iramj")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -6.98959, -2.38419e-07, 1.06086)
