@@ -19,6 +19,8 @@ func _process(delta):
 func _animate_to_player() -> void:
   make_current()
   _focusedNode = null
+  global_position = presentationCamera.global_position
+  global_rotation = presentationCamera.global_rotation
   var tween = create_tween().set_parallel(true)
   tween.tween_property(self, "position", playerNode.parts.camera.global_position, 0.5)
   tween.tween_property(self, "rotation", playerNode.parts.camera.global_rotation, 0.5)

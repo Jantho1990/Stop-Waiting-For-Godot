@@ -24,13 +24,13 @@ size = Vector3(40, 0, 40)
 [sub_resource type="QuadMesh" id="QuadMesh_ixm4q"]
 size = Vector2(16, 9)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_qjsk5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x8wj8"]
 viewport_path = NodePath("Presentation/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlkkp"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_qjsk5")
+albedo_texture = SubResource("ViewportTexture_x8wj8")
 
 [sub_resource type="Environment" id="Environment_k4gj0"]
 
