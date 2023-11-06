@@ -75,6 +75,7 @@ layout_mode = 2
 [node name="List" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
 custom_minimum_size = Vector2(540, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 
@@ -189,6 +190,7 @@ fit_content = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+size_flags_stretch_ratio = 2.0
 theme_type_variation = &"AsidePanelEditorBlue"
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/PanelContainer"]
