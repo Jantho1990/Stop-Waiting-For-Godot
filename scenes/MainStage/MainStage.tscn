@@ -123,6 +123,7 @@ skeleton = NodePath("")
 [node name="player" parent="." instance=ExtResource("3_cmu2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.605333, 1.88916, 1.12327)
 look_at_target = Vector3(15.3947, 7.30896, 12.867)
+freeze = true
 
 [node name="arbol_seco" parent="." instance=ExtResource("4_gk368")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -6.98959, -2.38419e-07, 1.06086)
