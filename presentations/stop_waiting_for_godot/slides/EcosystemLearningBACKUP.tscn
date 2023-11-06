@@ -1,18 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw7je5p1y6unm"]
+[gd_scene load_steps=9 format=3 uid="uid://d3shrmit03gfl"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_ox78t"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_viwbu"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_0cm1j"]
-[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_ju5ej"]
-[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_nhrr5"]
-[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_wtddd"]
+[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_jfmk6"]
+[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_t7sxn"]
+[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_2hxi1"]
+[ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_a504v"]
+[ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_qm27h"]
+[ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_e33ng"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
-script = ExtResource("2_viwbu")
+script = ExtResource("2_t7sxn")
 animation_duriation = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
-script = ExtResource("3_0cm1j")
+script = ExtResource("3_2hxi1")
 animation_duriation = 0.5
 
 [node name="EcosystemLearning" type="Control"]
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ox78t")
+script = ExtResource("1_jfmk6")
 steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -61,7 +61,7 @@ text = "[b]Ecosystem - Learning[/b]"
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBox/VBox2"]
 layout_mode = 2
 theme_type_variation = &"HSepGreen"
-theme_override_styles/separator = ExtResource("4_ju5ej")
+theme_override_styles/separator = ExtResource("4_a504v")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox"]
 layout_mode = 2
@@ -106,7 +106,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_nhrr5")
+texture = ExtResource("5_qm27h")
 expand_mode = 3
 stretch_mode = 5
 
@@ -130,7 +130,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_nhrr5")
+texture = ExtResource("5_qm27h")
 expand_mode = 3
 stretch_mode = 5
 
@@ -144,7 +144,7 @@ bbcode_enabled = true
 text = "Online"
 fit_content = true
 
-[node name="Tutorials" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox"]
+[node name="HelpForums" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox"]
 custom_minimum_size = Vector2(540, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -153,7 +153,105 @@ size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums"]
+custom_minimum_size = Vector2(410, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Help Forums"
+fit_content = true
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums/Point0"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_qm27h")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums/Point0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Godot Discord server"
+fit_content = true
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums/Point1"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_qm27h")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums/Point1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums/Point1/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "GodotForums.org (community-run)"
+fit_content = true
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums/Point2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_qm27h")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/HelpForums/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Open an issue on Github"
+fit_content = true
+
+[node name="HBox2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid"]
+layout_mode = 2
+
+[node name="Tutorials" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials"]
 custom_minimum_size = Vector2(410, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -164,31 +262,31 @@ bbcode_enabled = true
 text = "Godot Tutorials"
 fit_content = true
 
-[node name="HBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials"]
+[node name="HBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point0"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point0"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = ExtResource("5_nhrr5")
+texture = ExtResource("5_qm27h")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point0"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point0/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point0/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -201,27 +299,27 @@ text = "[b]Paid Courses[/b]
 [ul]Udemy[/ul]"
 fit_content = true
 
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point1"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = ExtResource("5_nhrr5")
+texture = ExtResource("5_qm27h")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point1"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point1/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point1/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -236,27 +334,27 @@ text = "[b]YouTube[/b]
 [ul]Devlogs[/ul]"
 fit_content = true
 
-[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point2"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = ExtResource("5_nhrr5")
+texture = ExtResource("5_qm27h")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point2"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point2/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point2/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -269,28 +367,28 @@ text = "[b]Blogs[/b]
 [ul]Search engines[/ul]"
 fit_content = true
 
-[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point3"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = ExtResource("5_nhrr5")
+texture = ExtResource("5_qm27h")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point3"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point3/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox2/Tutorials/HBox/Point3/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -301,10 +399,6 @@ bbcode_enabled = true
 text = "[b]Godot's Tutorials Reference Page[/b]"
 fit_content = true
 
-[node name="HBox2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid"]
-visible = false
-layout_mode = 2
-
-[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_wtddd")]
+[node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_e33ng")]
 layout_mode = 2
 size_flags_vertical = 8
