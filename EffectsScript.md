@@ -22,6 +22,7 @@ SlideIns
 SlideIns
 
 ## TitleWhyGodot
+Animation
 
 ## WhyIChoseGodot
 
@@ -40,9 +41,12 @@ TransOut
 ## AndEven
 TransIn
 FadeIn
-SeparateTo3DWorld
+SwitchTo3DWorld
 
 ## TitleWhatIsGodot
+TransIn
+Animation
+TransOut
 
 ## GodotHistory
 
@@ -53,6 +57,9 @@ SeparateTo3DWorld
 ## OrganizationalStructure
 
 ## TitleGettingStarted
+TransIn
+Animation
+TransOut
 
 ## DownloadingTheEngine
 Image
@@ -68,6 +75,9 @@ Image
 ## ReleaseTargetsConsoles
 
 ## TitleEcosystem
+TransIn
+Animation
+TransOut
 
 ## EcosystemLearning
 
@@ -78,13 +88,29 @@ Image
 ## EcosystemCompanies
 
 ## TitleOverviewByExample
+TransIn
+Animation
+TransOut
 
 ## TitleDeeperDiveSWFG
+TransIn
+Animation
+TransOut
 
 ## TitleDeeperDiveDT
+TransIn
+Animation
+TransOut
 
 ## TitleConclusion
+TransIn
+Animation
+TransOut
 
 ## ConclusionDetails
 
 ## TitleThankYou
+TransIn
+Animation
+SwitchTo3DWorld
+TransOut
