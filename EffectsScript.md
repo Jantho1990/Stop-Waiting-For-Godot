@@ -101,6 +101,10 @@ SlideIn
 TransOut
 
 ## ReleaseTargets
+TransIn
+FadeIn
+SlideIn
+TransOut
 
 ## ReleaseTargetsConsoles
 

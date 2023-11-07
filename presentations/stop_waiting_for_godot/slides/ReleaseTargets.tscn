@@ -1,19 +1,74 @@
-[gd_scene load_steps=9 format=3 uid="uid://vbm3y2n6466n"]
+[gd_scene load_steps=24 format=3 uid="uid://vbm3y2n6466n"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_sa1of"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_nqr67"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_prjm5"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_duuah"]
+[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_3h0mu"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_c6wjy"]
+[ext_resource type="Script" path="res://resources/SlideToZeroStep.gd" id="5_d0pbr"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_mbcih"]
+[ext_resource type="Script" path="res://nodes/AnimationWrapper.gd" id="6_bna6c"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="6_owk7h"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_uuit4"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_nqr67")
-animation_duriation = 0.5
+animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_by1g0"]
+script = ExtResource("4_3h0mu")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_3o2ix"]
+script = ExtResource("2_prjm5")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_by1g0")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_4b3od"]
+script = ExtResource("4_3h0mu")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ma8cr"]
+script = ExtResource("4_3h0mu")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_nxjgw"]
+script = ExtResource("4_3h0mu")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_dk7wo"]
+script = ExtResource("4_3h0mu")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Point3")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ibkmk"]
+script = ExtResource("2_prjm5")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_4b3od"), SubResource("Resource_ma8cr"), SubResource("Resource_nxjgw"), SubResource("Resource_dk7wo")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_2hohj"]
+script = ExtResource("5_d0pbr")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper/PanelContainer")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_yg2j3"]
+script = ExtResource("6_owk7h")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox")])
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_duuah")
-animation_duriation = 0.5
+animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_phhlc"]
+script = ExtResource("2_prjm5")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_yg2j3"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
 
 [node name="ReleaseTargets" type="Control"]
 layout_mode = 3
@@ -23,7 +78,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sa1of")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_3o2ix"), SubResource("Resource_ibkmk"), SubResource("Resource_2hohj"), SubResource("Resource_phhlc")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -80,6 +135,7 @@ size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 
 [node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -111,6 +167,7 @@ text = "Desktop
 fit_content = true
 
 [node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -141,6 +198,7 @@ text = "Mobile
 fit_content = true
 
 [node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -164,6 +222,7 @@ text = "VR/AR"
 fit_content = true
 
 [node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -186,14 +245,23 @@ bbcode_enabled = true
 text = "Web"
 fit_content = true
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox"]
+custom_minimum_size = Vector2(628, 336)
 layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("6_bna6c")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper"]
+layout_mode = 2
+offset_top = 1200.0
+offset_right = 628.0
+offset_bottom = 1536.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 size_flags_stretch_ratio = 2.0
 theme_type_variation = &"AsidePanelEditorBlue"
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/PanelContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper/PanelContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "All release systems driven by export templates.
