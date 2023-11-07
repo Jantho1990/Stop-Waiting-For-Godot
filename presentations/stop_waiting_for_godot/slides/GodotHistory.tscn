@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dk54xyvfb1os4"]
+[gd_scene load_steps=31 format=3 uid="uid://dk54xyvfb1os4"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_mocak"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_82sgg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://resources/SlideToZeroStep.gd" id="5_tb051"]
 [ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="6_6houe"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_m8nt7"]
+[ext_resource type="Script" path="res://resources/SlideToLocalPositionStep.gd" id="6_y8acl"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_82sgg")
@@ -56,6 +57,42 @@ script = ExtResource("5_tb051")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper6/Point5")])
 animation_duration = 0.2
 
+[sub_resource type="Resource" id="Resource_7nolk"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper6/Point5")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_mlaim"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper5/Point4")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_kos4w"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper4/Point3")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_rec84"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper3/Point2")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_ip0e7"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper2/Point1")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_iv65w"]
+script = ExtResource("6_y8acl")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/AnimationWrapper/Point0")])
+target_position = Vector2(0, 2000)
+animation_duration = 0.1
+
 [sub_resource type="Resource" id="Resource_6id3u"]
 script = ExtResource("6_6houe")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
@@ -67,7 +104,7 @@ animation_duriation = null
 
 [sub_resource type="Resource" id="Resource_i0l7j"]
 script = ExtResource("2_w8nmh")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_6id3u"), SubResource("Resource_1vcjn")])
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_7nolk"), SubResource("Resource_mlaim"), SubResource("Resource_kos4w"), SubResource("Resource_rec84"), SubResource("Resource_ip0e7"), SubResource("Resource_iv65w"), SubResource("Resource_6id3u"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [node name="GodotHistory" type="Control"]
