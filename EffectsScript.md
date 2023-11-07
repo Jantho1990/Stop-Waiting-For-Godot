@@ -52,6 +52,10 @@ Animation
 TransOut
 
 ## GodotHistory
+TransIn
+SlideIns
+SlideOuts
+TransOut
 
 ## OpenSourceSoftware
 
