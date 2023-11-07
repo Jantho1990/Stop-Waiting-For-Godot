@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxj12d5goaywq"]
+[gd_scene load_steps=22 format=3 uid="uid://dxj12d5goaywq"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_65uo1"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_j0uii"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_wm136"]
+[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_5lusk"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="4_ygbvc"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="5_hhmtg"]
 [ext_resource type="Texture2D" uid="uid://ulhi0bin0nml" path="res://assets/media/images/godot-download-page.png" id="5_r7425"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="5_vqd8b"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="7_ett1j"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="8_yrb4s"]
 
@@ -12,9 +15,54 @@
 script = ExtResource("2_j0uii")
 animation_duriation = null
 
+[sub_resource type="Resource" id="Resource_mife1"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/TextureRect")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_b3vqa"]
+script = ExtResource("2_wm136")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_mife1")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_s56ty"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Link")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_4x1w3"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Platforms")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_1631e"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/CSharp")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_7fd3p"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Distributed")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_tqxqu"]
+script = ExtResource("4_5lusk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List/Compile")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_yc1wc"]
+script = ExtResource("5_vqd8b")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/VBox/TextureRect"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List")])
+animation_duration = 0.5
+
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("4_ygbvc")
 animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_cgghm"]
+script = ExtResource("2_wm136")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_yc1wc"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
 
 [node name="DownloadingTheEngine" type="Control"]
 layout_mode = 3
@@ -24,7 +72,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_65uo1")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_b3vqa"), SubResource("Resource_s56ty"), SubResource("Resource_4x1w3"), SubResource("Resource_1631e"), SubResource("Resource_7fd3p"), SubResource("Resource_tqxqu"), SubResource("Resource_cgghm")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -89,6 +137,7 @@ size_flags_vertical = 4
 theme_type_variation = &"V32"
 
 [node name="Link" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -112,6 +161,7 @@ text = "godotengine.org/download"
 fit_content = true
 
 [node name="Platforms" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -135,6 +185,7 @@ text = "Windows, Mac, Linux"
 fit_content = true
 
 [node name="CSharp" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -158,6 +209,7 @@ text = "Regular or C#"
 fit_content = true
 
 [node name="Distributed" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -188,6 +240,7 @@ text = "Regular also on:
 fit_content = true
 
 [node name="Compile" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/List"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 

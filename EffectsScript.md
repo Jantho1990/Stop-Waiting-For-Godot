@@ -68,6 +68,10 @@ FadeIn
 TransOut
 
 ## OrganizationalStructure
+TransIn
+SlideIns
+SlideOuts
+TransOut
 
 ## TitleGettingStarted
 TransIn
@@ -75,7 +79,10 @@ Animation
 TransOut
 
 ## DownloadingTheEngine
+TransIn
+FadeIn
 Image
+TransOut
 
 ## VersionComparison
 
