@@ -91,6 +91,9 @@ FadeIn
 TransOut
 
 ## SupportedOSes
+TransIn
+Highlight
+TransOut
 
 ## DevelopingAGame
 
