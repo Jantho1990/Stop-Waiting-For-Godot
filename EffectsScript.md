@@ -118,6 +118,10 @@ Animation
 TransOut
 
 ## EcosystemLearning
+TransIn
+FadeIn
+SlideIn
+TransOut
 
 ## EcosystemIssues
 

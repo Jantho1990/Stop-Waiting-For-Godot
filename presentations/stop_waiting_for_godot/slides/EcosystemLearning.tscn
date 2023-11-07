@@ -1,19 +1,84 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw7je5p1y6unm"]
+[gd_scene load_steps=26 format=3 uid="uid://bw7je5p1y6unm"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_ox78t"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_llk84"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_viwbu"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_0cm1j"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_ju5ej"]
+[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_ph13v"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_nhrr5"]
+[ext_resource type="Script" path="res://resources/SlideToZeroStep.gd" id="5_upyd8"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="6_3iscx"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_wtddd"]
+[ext_resource type="Script" path="res://nodes/AnimationWrapper.gd" id="9_g2jlg"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_viwbu")
 animation_duriation = null
 
+[sub_resource type="Resource" id="Resource_dgt6x"]
+script = ExtResource("4_ph13v")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_6qmly"]
+script = ExtResource("2_llk84")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_dgt6x")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_5rclm"]
+script = ExtResource("4_ph13v")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_twlxk"]
+script = ExtResource("5_upyd8")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/AnimationWrapper/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_nkc7u"]
+script = ExtResource("5_upyd8")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/AnimationWrapper2/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_n7vwh"]
+script = ExtResource("4_ph13v")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_fd63h"]
+script = ExtResource("5_upyd8")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ljtnk"]
+script = ExtResource("5_upyd8")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper2/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_dbso6"]
+script = ExtResource("5_upyd8")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper3/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_6n7u7"]
+script = ExtResource("5_upyd8")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper4/Point3")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_eacjt"]
+script = ExtResource("6_3iscx")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/Grid")])
+animation_duration = 0.5
+
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_0cm1j")
 animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_vrqy8"]
+script = ExtResource("2_llk84")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_eacjt"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
 
 [node name="EcosystemLearning" type="Control"]
 layout_mode = 3
@@ -23,7 +88,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ox78t")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_6qmly"), SubResource("Resource_5rclm"), SubResource("Resource_twlxk"), SubResource("Resource_nkc7u"), SubResource("Resource_n7vwh"), SubResource("Resource_fd63h"), SubResource("Resource_ljtnk"), SubResource("Resource_dbso6"), SubResource("Resource_6n7u7"), SubResource("Resource_vrqy8")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -86,22 +151,32 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(410, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "Documentation"
+text = "[b]Documentation[/b]"
 fit_content = true
 
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs"]
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs"]
+custom_minimum_size = Vector2(540, 64)
 layout_mode = 2
+script = ExtResource("9_g2jlg")
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/AnimationWrapper"]
+layout_mode = 2
+offset_left = -800.0
+offset_right = -260.0
+offset_bottom = 64.0
 size_flags_vertical = 3
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/Point0"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/AnimationWrapper/Point0"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -110,7 +185,7 @@ texture = ExtResource("5_nhrr5")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/Point0"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/AnimationWrapper/Point0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -120,12 +195,20 @@ bbcode_enabled = true
 text = "In the editor itself"
 fit_content = true
 
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs"]
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs"]
+custom_minimum_size = Vector2(540, 64)
 layout_mode = 2
+script = ExtResource("9_g2jlg")
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/AnimationWrapper2"]
+layout_mode = 2
+offset_left = -800.0
+offset_right = -260.0
+offset_bottom = 64.0
 size_flags_vertical = 3
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/Point1"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/AnimationWrapper2/Point1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -134,7 +217,7 @@ texture = ExtResource("5_nhrr5")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/Point1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Docs/AnimationWrapper2/Point1"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -154,26 +237,36 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(410, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "Godot Tutorials"
+text = "[b]Godot Tutorials[/b]"
 fit_content = true
 
 [node name="HBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+custom_minimum_size = Vector2(540, 143)
 layout_mode = 2
+script = ExtResource("9_g2jlg")
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 540.0
+offset_bottom = 2143.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point0"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper/Point0"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -182,13 +275,13 @@ texture = ExtResource("5_nhrr5")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point0"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper/Point0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point0/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper/Point0/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -201,13 +294,21 @@ text = "[b]Paid Courses[/b]
 [ul]Udemy[/ul]"
 fit_content = true
 
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+custom_minimum_size = Vector2(540, 233)
 layout_mode = 2
+script = ExtResource("9_g2jlg")
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper2"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 540.0
+offset_bottom = 2233.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point1"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper2/Point1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -216,12 +317,12 @@ texture = ExtResource("5_nhrr5")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point1"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper2/Point1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point1/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper2/Point1/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -236,12 +337,20 @@ text = "[b]YouTube[/b]
 [ul]Devlogs[/ul]"
 fit_content = true
 
-[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+custom_minimum_size = Vector2(540, 143)
 layout_mode = 2
+script = ExtResource("9_g2jlg")
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper3"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 540.0
+offset_bottom = 2143.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point2"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper3/Point2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -250,13 +359,13 @@ texture = ExtResource("5_nhrr5")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point2"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper3/Point2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point2/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper3/Point2/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -269,13 +378,21 @@ text = "[b]Blogs[/b]
 [ul]Search engines[/ul]"
 fit_content = true
 
-[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+[node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox"]
+custom_minimum_size = Vector2(540, 98)
 layout_mode = 2
+script = ExtResource("9_g2jlg")
+
+[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper4"]
+layout_mode = 2
+offset_top = 2000.0
+offset_right = 540.0
+offset_bottom = 2098.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point3"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper4/Point3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -284,13 +401,13 @@ texture = ExtResource("5_nhrr5")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point3"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper4/Point3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/Point3/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/Grid/HBox/Tutorials/HBox/AnimationWrapper4/Point3/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4

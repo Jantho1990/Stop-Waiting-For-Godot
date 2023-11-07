@@ -9,11 +9,11 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_p1i6v")
-animation_duriation = 0.5
+animation_duriation = null
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_viapu")
-animation_duriation = 0.5
+animation_duriation = null
 
 [node name="EcosystemIssues" type="Control"]
 layout_mode = 3
@@ -83,7 +83,7 @@ alignment = 1
 
 [node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
 layout_mode = 2
-theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/bold_font_size = 48
 bbcode_enabled = true
 text = "[b]Help[/b]"
 fit_content = true
@@ -168,7 +168,7 @@ alignment = 1
 
 [node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version3"]
 layout_mode = 2
-theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/bold_font_size = 48
 bbcode_enabled = true
 text = "[b]Feature Request[/b]"
 fit_content = true
