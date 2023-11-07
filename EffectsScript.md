@@ -25,6 +25,9 @@ SlideIns
 Animation
 
 ## WhyIChoseGodot
+TransIn
+FadeIn
+TransOut
 
 ## GodotGames3D
 3DPanels
