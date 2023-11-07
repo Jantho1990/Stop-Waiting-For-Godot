@@ -29,7 +29,7 @@ animation_duration = 0.5
 script = ExtResource("5_8wdal")
 highlight_color = Color(1, 0.929412, 0.631373, 1)
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point0")])
-animation_duration = 0.5
+animation_duration = 0.1
 
 [sub_resource type="Resource" id="Resource_k3c2w"]
 script = ExtResource("5_8wdal")
