@@ -1,19 +1,57 @@
-[gd_scene load_steps=9 format=3 uid="uid://08b4e853v7hq"]
+[gd_scene load_steps=20 format=3 uid="uid://08b4e853v7hq"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_8pe66"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_anuh6"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_npnj1"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_xl0qn"]
+[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_bdhmm"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_kxs0a"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_1clwn"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="5_qgatv"]
+[ext_resource type="Script" path="res://resources/WaitStep.gd" id="6_i41xv"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_jbj7e"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_npnj1")
 animation_duriation = null
 
+[sub_resource type="Resource" id="Resource_4arii"]
+script = ExtResource("4_bdhmm")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_oar1u"]
+script = ExtResource("2_anuh6")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_4arii")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_roh7e"]
+script = ExtResource("4_bdhmm")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point0")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_esn3o"]
+script = ExtResource("4_bdhmm")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point1")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_j5dak"]
+script = ExtResource("5_qgatv")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_tdm02"]
+script = ExtResource("6_i41xv")
+animation_duration = 0.5
+
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_xl0qn")
 animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_5m45c"]
+script = ExtResource("2_anuh6")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_j5dak"), SubResource("Resource_tdm02"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
 
 [node name="EcosystemCompanies" type="Control"]
 layout_mode = 3
@@ -23,7 +61,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8pe66")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_oar1u"), SubResource("Resource_roh7e"), SubResource("Resource_esn3o"), SubResource("Resource_5m45c")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -82,6 +120,7 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -113,6 +152,7 @@ text = "W4 Games
 fit_content = true
 
 [node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 

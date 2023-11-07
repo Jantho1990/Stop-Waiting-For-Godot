@@ -135,6 +135,9 @@ SlideIn
 TransOut
 
 ## EcosystemCompanies
+TransIn
+FadeIn
+TransOut
 
 ## TitleOverviewByExample
 TransIn
