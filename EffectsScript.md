@@ -96,6 +96,9 @@ Highlight
 TransOut
 
 ## DevelopingAGame
+TransIn
+SlideIn
+TransOut
 
 ## ReleaseTargets
 
