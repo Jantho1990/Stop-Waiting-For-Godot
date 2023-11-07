@@ -38,8 +38,10 @@ func _set_slide_steps(value: Array) -> void:
 func next() -> void:
   step_next_began.emit()
   for slideStep in slide_steps:
+    print('DBG: multistep %s' % slideStep)
     slideStep.next()
     if slideStep.in_progress:
+      print('DBG: multistep waiting', slideStep)
       await slideStep.step_next_ended
   step_next_ended.emit()
 
