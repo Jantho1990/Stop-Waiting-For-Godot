@@ -85,6 +85,10 @@ Image
 TransOut
 
 ## VersionComparison
+TransIn
+SlideIn
+FadeIn
+TransOut
 
 ## SupportedOSes
 
