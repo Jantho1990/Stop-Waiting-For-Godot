@@ -130,6 +130,9 @@ SlideIn
 TransOut
 
 ## EcosystemAssets
+TransIn
+SlideIn
+TransOut
 
 ## EcosystemCompanies
 
