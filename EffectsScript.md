@@ -124,6 +124,10 @@ SlideIn
 TransOut
 
 ## EcosystemIssues
+TransIn
+FadeIn
+SlideIn
+TransOut
 
 ## EcosystemAssets
 
