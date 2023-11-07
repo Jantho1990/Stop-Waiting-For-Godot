@@ -8,7 +8,7 @@ signal step_previous_began
 signal step_previous_ended
 
 
-@export var animation_duriation : float = 0.5
+@export var animation_duration : float = 0.5
 
 var in_progress := false
 var slide : PresentationSlide : set = _set_slide
@@ -40,12 +40,16 @@ func _on_Step_previous_ended() -> void:
 # Runs when the slide moves to the next step.
 # Interface function. Must be replaced by inhereting resources.
 func next() -> void:
+#  step_next_began.emit()
+#  step_next_ended.emit()
   pass
   
   
 # Runs when the slide moves to the previous step.
 # Interface function. Must be replaced by inhereting resources.  
 func previous() -> void:
+#  step_previous_began.emit()
+#  step_previous_ended.emit()
   pass
 
 

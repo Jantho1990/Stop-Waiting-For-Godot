@@ -32,14 +32,14 @@ func next() -> void:
   _stabilizeTween = slide.create_tween().set_parallel(true)
   
   var grayscaleShader = slide.get_node(grayscaleImagePath).material
-  _slideTween.tween_property(grayscaleShader, "shader_parameter/gray_amount", 1.0, animation_duriation).from(0.0)
+  _slideTween.tween_property(grayscaleShader, "shader_parameter/gray_amount", 1.0, animation_duration).from(0.0)
   for fadeGrayPath in fadeGrayPaths:
     var fadeGray = slide.get_node(fadeGrayPath)
-    _slideTween.tween_property(fadeGray, "modulate", FADE_GRAY_COLOR, animation_duriation).from(VISIBLE_COLOR)
+    _slideTween.tween_property(fadeGray, "modulate", FADE_GRAY_COLOR, animation_duration).from(VISIBLE_COLOR)
   for stabilizeInPath in stabilizeInPaths:
     var stabilizeIn = slide.get_node(stabilizeInPath)
     stabilizeIn.show()
-    _stabilizeTween.tween_property(stabilizeIn, "modulate", VISIBLE_COLOR, animation_duriation).from(INVISIBLE_COLOR)
+    _stabilizeTween.tween_property(stabilizeIn, "modulate", VISIBLE_COLOR, animation_duration).from(INVISIBLE_COLOR)
   for stabilizeOutPath in stabilizeOutPaths:
     var stabilizeOut = slide.get_node(stabilizeOutPath)
     stabilizeOut.hide()
@@ -61,13 +61,13 @@ func previous() -> void:
   _stabilizeTween = slide.create_tween().set_parallel(true)
   
   var grayscaleShader = slide.get_node(grayscaleImagePath).material
-  _slideTween.tween_property(grayscaleShader, "shader_parameter/gray_amount", 0.0, animation_duriation).from(1.0)
+  _slideTween.tween_property(grayscaleShader, "shader_parameter/gray_amount", 0.0, animation_duration).from(1.0)
   for fadeGrayPath in fadeGrayPaths:
     var fadeGray = slide.get_node(fadeGrayPath)
-    _slideTween.tween_property(fadeGray, "modulate", VISIBLE_COLOR, animation_duriation).from(FADE_GRAY_COLOR)
+    _slideTween.tween_property(fadeGray, "modulate", VISIBLE_COLOR, animation_duration).from(FADE_GRAY_COLOR)
   for stabilizeInPath in stabilizeInPaths:
     var stabilizeIn = slide.get_node(stabilizeInPath)
-    _stabilizeTween.tween_property(stabilizeIn, "modulate", INVISIBLE_COLOR, animation_duriation).from(VISIBLE_COLOR)
+    _stabilizeTween.tween_property(stabilizeIn, "modulate", INVISIBLE_COLOR, animation_duration).from(VISIBLE_COLOR)
     _stabilizeTween.chain().tween_callback(stabilizeIn.hide)
   for stabilizeOutPath in stabilizeOutPaths:
     var stabilizeOut = slide.get_node(stabilizeOutPath)

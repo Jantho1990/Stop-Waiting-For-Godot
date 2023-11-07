@@ -9,11 +9,11 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_ihsnk")
-animation_duriation = 0.5
+animation_duriation = null
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_lbl6s")
-animation_duriation = 0.5
+animation_duriation = null
 
 [node name="DevelopingAGame" type="Control"]
 layout_mode = 3

@@ -33,10 +33,10 @@ func next() -> void:
   
   for fadeInPath in fadeInPaths:
     var fadeIn = slide.get_node(fadeInPath)
-    _slideTween.tween_property(fadeIn, "modulate", FADE_IN_COLOR_END, animation_duriation).from(FADE_IN_COLOR_BEGIN)
+    _slideTween.tween_property(fadeIn, "modulate", FADE_IN_COLOR_END, animation_duration).from(FADE_IN_COLOR_BEGIN)
   for fadeOutPath in fadeOutPaths:
     var fadeOut = slide.get_node(fadeOutPath)
-    _slideTween.tween_property(fadeOut, "modulate", FADE_IN_COLOR_BEGIN, animation_duriation).from(FADE_IN_COLOR_END)
+    _slideTween.tween_property(fadeOut, "modulate", FADE_IN_COLOR_BEGIN, animation_duration).from(FADE_IN_COLOR_END)
   for stabilizeInPath in stabilizeInPaths:
     var stabilizeIn = slide.get_node(stabilizeInPath)
     stabilizeIn.show()
@@ -64,10 +64,10 @@ func previous() -> void:
   
   for fadeInPath in fadeInPaths:
     var fadeIn = slide.get_node(fadeInPath)
-    _slideTween.tween_property(fadeIn, "modulate", FADE_IN_COLOR_BEGIN, animation_duriation).from(FADE_IN_COLOR_END)
+    _slideTween.tween_property(fadeIn, "modulate", FADE_IN_COLOR_BEGIN, animation_duration).from(FADE_IN_COLOR_END)
   for fadeOutPath in fadeOutPaths:
     var fadeOut = slide.get_node(fadeOutPath)
-    _slideTween.tween_property(fadeOut, "modulate", FADE_IN_COLOR_END, animation_duriation).from(FADE_IN_COLOR_BEGIN)
+    _slideTween.tween_property(fadeOut, "modulate", FADE_IN_COLOR_END, animation_duration).from(FADE_IN_COLOR_BEGIN)
   for stabilizeInPath in stabilizeInPaths:
     var stabilizeIn = slide.get_node(stabilizeInPath)
     _stabilizeTween.tween_property(stabilizeIn, "modulate", FADE_IN_COLOR_BEGIN, STABILIZE_TIME).from(FADE_IN_COLOR_END)

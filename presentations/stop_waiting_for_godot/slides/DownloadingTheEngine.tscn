@@ -10,11 +10,11 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_j0uii")
-animation_duriation = 0.5
+animation_duriation = null
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("4_ygbvc")
-animation_duriation = 0.5
+animation_duriation = null
 
 [node name="DownloadingTheEngine" type="Control"]
 layout_mode = 3
