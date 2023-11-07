@@ -58,8 +58,14 @@ SlideOuts
 TransOut
 
 ## OpenSourceSoftware
+TransIn
+Highlight
+TransOut
 
 ## Funding
+TransIn
+FadeIn
+TransOut
 
 ## OrganizationalStructure
 

@@ -1,19 +1,52 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccjo3vakb25i"]
+[gd_scene load_steps=18 format=3 uid="uid://ccjo3vakb25i"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_p5a0r"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_ggiwj"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_mlkhy"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_8xoek"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_sgywd"]
+[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_thoct"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="5_ab2tl"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_ymrnx"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_tc71b"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mlkhy")
-animation_duriation = 0.5
+animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_qpkur"]
+script = ExtResource("4_thoct")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_hx63c"]
+script = ExtResource("2_ggiwj")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_qpkur")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_s0hnc"]
+script = ExtResource("4_thoct")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point0")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_aoldq"]
+script = ExtResource("4_thoct")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point1")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_c5igg"]
+script = ExtResource("5_ab2tl")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4")])
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_8xoek")
-animation_duriation = 0.5
+animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_4r8tj"]
+script = ExtResource("2_ggiwj")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_c5igg"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
 
 [node name="Funding" type="Control"]
 layout_mode = 3
@@ -23,7 +56,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p5a0r")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_hx63c"), SubResource("Resource_s0hnc"), SubResource("Resource_aoldq"), SubResource("Resource_4r8tj")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -82,6 +115,7 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -112,6 +146,7 @@ text = "Freewill Donations
 fit_content = true
 
 [node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
