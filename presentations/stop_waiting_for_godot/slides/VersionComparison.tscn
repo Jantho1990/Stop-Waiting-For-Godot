@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cc33b1lhevig8"]
+[gd_scene load_steps=45 format=3 uid="uid://cc33b1lhevig8"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_32yh4"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_0nh50"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_rwfq5"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_wwsoh"]
 [ext_resource type="Script" path="res://resources/HighlightStep.gd" id="6_xrlhd"]
+[ext_resource type="Script" path="res://resources/SimulStep.gd" id="7_n3r7g"]
 [ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="7_quvge"]
+[ext_resource type="Script" path="res://resources/SlideToLocalPositionStep.gd" id="8_xh67d"]
 [ext_resource type="Script" path="res://nodes/AnimationWrapper.gd" id="10_7trux"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
@@ -48,7 +50,7 @@ animation_duration = 0.1
 script = ExtResource("6_xrlhd")
 highlight_color = Color(1, 0.929412, 0.631373, 1)
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4/Point1")])
-animation_duration = 0.1
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_hhtus"]
 script = ExtResource("2_r6iwv")
@@ -131,7 +133,7 @@ animation_duration = 0.5
 [sub_resource type="Resource" id="Resource_bdycw"]
 script = ExtResource("6_xrlhd")
 highlight_color = Color(1, 1, 1, 1)
-animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper2/Version3/Point1")])
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper2/Version3/Point2")])
 animation_duration = 0.1
 
 [sub_resource type="Resource" id="Resource_bjjer"]
@@ -145,9 +147,26 @@ script = ExtResource("2_r6iwv")
 slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_bdycw"), SubResource("Resource_bjjer")])
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_rid3w"]
+script = ExtResource("8_xh67d")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4")])
+target_position = Vector2(-900, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_n66w3"]
+script = ExtResource("8_xh67d")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper2/Version3")])
+target_position = Vector2(1200, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ck7tx"]
+script = ExtResource("7_n3r7g")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_rid3w"), SubResource("Resource_n66w3")])
+animation_duration = 0.5
+
 [sub_resource type="Resource" id="Resource_sgptd"]
 script = ExtResource("7_quvge")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
@@ -156,7 +175,7 @@ animation_duriation = null
 
 [sub_resource type="Resource" id="Resource_0ibij"]
 script = ExtResource("2_r6iwv")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sgptd"), SubResource("Resource_1vcjn")])
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_ck7tx"), SubResource("Resource_sgptd"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [node name="VersionComparison" type="Control"]
