@@ -1,19 +1,102 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3d1jsp5xgig7"]
+[gd_scene load_steps=32 format=3 uid="uid://b3d1jsp5xgig7"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_3g3nv"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_0quik"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_wajld"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_xs774"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_3kyup"]
+[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_f5nm7"]
+[ext_resource type="Script" path="res://nodes/AnimationWrapper.gd" id="5_ailbq"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_cio73"]
+[ext_resource type="Script" path="res://resources/SimulStep.gd" id="5_w8jik"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_4h7sv"]
+[ext_resource type="Script" path="res://resources/SlideToZeroStep.gd" id="6_7aqw6"]
+[ext_resource type="Script" path="res://resources/SlideToLocalPositionStep.gd" id="7_85koj"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="8_busr7"]
+[ext_resource type="Script" path="res://resources/WaitStep.gd" id="9_6sadi"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_0quik")
-animation_duriation = 0.5
+animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_45gsv"]
+script = ExtResource("4_f5nm7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_vga2v"]
+script = ExtResource("2_wajld")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_45gsv")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_ojbio"]
+script = ExtResource("4_f5nm7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_jk50r"]
+script = ExtResource("6_7aqw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper/Point0")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ebxwg"]
+script = ExtResource("5_w8jik")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_ojbio"), SubResource("Resource_jk50r")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_18xhn"]
+script = ExtResource("4_f5nm7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper2/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_alelm"]
+script = ExtResource("6_7aqw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper2/Point1")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_ny0ry"]
+script = ExtResource("5_w8jik")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_18xhn"), SubResource("Resource_alelm")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_nneop"]
+script = ExtResource("4_f5nm7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_bo68k"]
+script = ExtResource("6_7aqw6")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3/Point2")])
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_vxhi6"]
+script = ExtResource("5_w8jik")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_nneop"), SubResource("Resource_bo68k")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_bddqc"]
+script = ExtResource("7_85koj")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper/Point0"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper2/Point1"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3/Point2")])
+target_position = Vector2(-1600, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_62llq"]
+script = ExtResource("8_busr7")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_2837s"]
+script = ExtResource("9_6sadi")
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_xs774")
-animation_duriation = 0.5
+animation_duriation = null
+
+[sub_resource type="Resource" id="Resource_gbmfh"]
+script = ExtResource("2_wajld")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_bddqc"), SubResource("Resource_62llq"), SubResource("Resource_2837s"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
 
 [node name="ReleaseTargetsConsoles" type="Control"]
 layout_mode = 3
@@ -23,7 +106,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3g3nv")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_vga2v"), SubResource("Resource_ebxwg"), SubResource("Resource_ny0ry"), SubResource("Resource_vxhi6"), SubResource("Resource_gbmfh")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -76,11 +159,20 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
 
-[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+[node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
+script = ExtResource("5_ailbq")
+
+[node name="Point0" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -120.0
+offset_right = 896.0
+offset_bottom = -56.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point0"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper/Point0"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -89,7 +181,7 @@ texture = ExtResource("5_cio73")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point0"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper/Point0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -99,11 +191,20 @@ bbcode_enabled = true
 text = "Godot can run on consoles"
 fit_content = true
 
-[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+[node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+custom_minimum_size = Vector2(896, 188)
 layout_mode = 2
+script = ExtResource("5_ailbq")
+
+[node name="Point1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -120.0
+offset_right = 896.0
+offset_bottom = 68.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point1"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper2/Point1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -112,12 +213,12 @@ texture = ExtResource("5_cio73")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point1"]
+[node name="Margin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper2/Point1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point1/Margin"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper2/Point1/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -129,11 +230,20 @@ text = "Open source export templates not allowed
 [ul]Means Godot itself can never provide built-in export templates[/ul]"
 fit_content = true
 
-[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+[node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
+custom_minimum_size = Vector2(896, 64)
 layout_mode = 2
+script = ExtResource("5_ailbq")
+
+[node name="Point2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_top = -120.0
+offset_right = 896.0
+offset_bottom = -56.0
 theme_override_constants/separation = 16
 
-[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point2"]
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3/Point2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -142,7 +252,7 @@ texture = ExtResource("5_cio73")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/Point2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3/Point2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4

@@ -107,6 +107,10 @@ SlideIn
 TransOut
 
 ## ReleaseTargetsConsoles
+TransIn
+FadeIn
+SlideIn
+TransOut
 
 ## TitleEcosystem
 TransIn
