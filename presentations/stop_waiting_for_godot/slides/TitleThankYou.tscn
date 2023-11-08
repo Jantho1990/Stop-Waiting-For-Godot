@@ -365,7 +365,11 @@ text = "[right]Twitter: [b]@jantho1990[/b]
 Instagram: [b]@aspiringgamedev[/b]
 
 [i]joshanthony.info
-loonicy.com[/i][/right]"
+loonicy.com
+
+https://github.com/Jantho1990/
+Stop-Waiting-For-Godot[/i]
+[/right]"
 fit_content = true
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_3uch2")]
