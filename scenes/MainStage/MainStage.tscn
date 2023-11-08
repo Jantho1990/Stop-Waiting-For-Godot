@@ -136,6 +136,7 @@ transform = Transform3D(-0.604822, 0, -0.796361, 0, 1, 0, 0.796361, 0, -0.604822
 
 [node name="SubViewport" type="SubViewport" parent="Presentation"]
 size = Vector2i(1920, 1080)
+render_target_update_mode = 4
 
 [node name="SWFGPresentationLauncher" parent="Presentation/SubViewport" instance=ExtResource("6_don10")]
 
