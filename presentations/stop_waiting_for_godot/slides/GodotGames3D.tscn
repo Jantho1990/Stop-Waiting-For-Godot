@@ -15,46 +15,46 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mdqb2")
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_n38q5"]
 script = ExtResource("3_4csvg")
 animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
 animation_name = "advance_video_1"
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_b7x7y"]
 script = ExtResource("3_4csvg")
 animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
 animation_name = "advance_video_2"
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_wufar"]
 script = ExtResource("3_4csvg")
 animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
 animation_name = "advance_video_3"
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_vaecg"]
 script = ExtResource("3_4csvg")
 animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
 animation_name = "advance_video_4"
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_w3854"]
 script = ExtResource("3_4csvg")
 animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/VideoSlides3D/AnimationPlayer")
 animation_name = "end_video"
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_fdd1m"]
 script = ExtResource("3_3d30k")
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_bbpph"]
 script = ExtResource("4_mjs3b")
 slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_w3854"), SubResource("Resource_fdd1m")])
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="World3D" id="World3D_eyk47"]
 
