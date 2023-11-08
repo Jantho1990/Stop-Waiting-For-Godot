@@ -1060,7 +1060,7 @@ layout_mode = 2
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 36
 bbcode_enabled = true
-text = "Developer: Bytten Studio"
+text = "Developer: 2Dynamics Games"
 fit_content = true
 
 [node name="Desc3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/Lumencraft/List"]
