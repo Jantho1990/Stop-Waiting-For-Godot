@@ -12,7 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mlkhy")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_qpkur"]
 script = ExtResource("4_thoct")
@@ -41,7 +41,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_8xoek")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_4r8tj"]
 script = ExtResource("2_ggiwj")
@@ -173,7 +173,7 @@ theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
 text = "Sponsors and grants
 [ul]Usually targeting specific engine focus[/ul]
-[ul]Microsoft, Google, Epic Games[/ul]
+[ul]Microsoft, Mozilla, Epic Games[/ul]
 [ul]Does not confer any ownership, engine still open-source[/ul]"
 fit_content = true
 
