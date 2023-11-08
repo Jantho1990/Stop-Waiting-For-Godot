@@ -142,7 +142,7 @@ layout_mode = 2
 theme_override_constants/separation = 64
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
-custom_minimum_size = Vector2(960, 90)
+custom_minimum_size = Vector2(960, 98)
 layout_mode = 2
 script = ExtResource("5_rd8fr")
 
@@ -157,12 +157,17 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
 texture = ExtResource("5_7i1l2")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -174,7 +179,7 @@ Godot Game Engine"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
-custom_minimum_size = Vector2(960, 135)
+custom_minimum_size = Vector2(960, 188)
 layout_mode = 2
 script = ExtResource("5_rd8fr")
 
@@ -189,12 +194,17 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
 texture = ExtResource("5_7i1l2")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -203,12 +213,13 @@ theme_override_font_sizes/bold_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
 text = "[b]What is Godot?[/b]
-[ul]History[/ul]
+[ul]How it's organized[/ul]
+[ul]Getting started[/ul]
 [ul]Ecosystem[/ul]"
 fit_content = true
 
 [node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox"]
-custom_minimum_size = Vector2(960, 135)
+custom_minimum_size = Vector2(960, 188)
 layout_mode = 2
 script = ExtResource("5_rd8fr")
 
@@ -223,12 +234,17 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
 texture = ExtResource("5_7i1l2")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -238,7 +254,8 @@ theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
 text = "[b]How do you use Godot?[/b]
 [ul]Look at a sample project[/ul]
-[ul]Briefly explore Dice Tower[/ul]"
+[ul]Briefly explore Dice Tower[/ul]
+[ul]Technical taste[/ul]"
 fit_content = true
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_vhpgr")]

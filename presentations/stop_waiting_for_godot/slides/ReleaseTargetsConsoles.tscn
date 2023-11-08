@@ -17,7 +17,7 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_0quik")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_45gsv"]
 script = ExtResource("4_f5nm7")
@@ -91,7 +91,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_xs774")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_gbmfh"]
 script = ExtResource("2_wajld")
@@ -231,7 +231,7 @@ text = "Open source export templates not allowed
 fit_content = true
 
 [node name="AnimationWrapper3" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List"]
-custom_minimum_size = Vector2(896, 64)
+custom_minimum_size = Vector2(896, 188)
 layout_mode = 2
 script = ExtResource("5_ailbq")
 
@@ -252,14 +252,22 @@ texture = ExtResource("5_cio73")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3/Point2"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3/Point2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/List/AnimationWrapper3/Point2/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "Companies exist that offer porting services"
+text = "Companies exist that offer porting services
+[ul]Lone Wolf Technology[/ul]
+[ul]Pineapple Works[/ul]
+[ul]More listed on Godot's Console Support page[/ul]"
 fit_content = true
 
 [node name="PresentationFooter" parent="PanelContainer/MarginContainer/VBox" instance=ExtResource("6_4h7sv")]

@@ -269,7 +269,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "Many developers have contributed code"
+text = "Version 2.0 released in 2016"
 fit_content = true
 
 [node name="AnimationWrapper4" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
@@ -300,7 +300,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "Features added by community need"
+text = "Version 3.0 released in 2018"
 fit_content = true
 
 [node name="AnimationWrapper5" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
@@ -331,7 +331,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "Adoption keeps growing year after year"
+text = "Version 4.0 released in 2023"
 fit_content = true
 
 [node name="AnimationWrapper6" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4"]
