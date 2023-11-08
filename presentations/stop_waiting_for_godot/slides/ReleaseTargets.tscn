@@ -14,7 +14,7 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_nqr67")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_by1g0"]
 script = ExtResource("4_3h0mu")
@@ -63,7 +63,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_duuah")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_phhlc"]
 script = ExtResource("2_prjm5")
@@ -264,7 +264,7 @@ theme_type_variation = &"AsidePanelEditorBlue"
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBox/AnimationWrapper/PanelContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "All release systems driven by export templates.
+text = "All release targets driven by export templates.
 
 Only download the templates for the release targets you care about."
 autowrap_mode = 3

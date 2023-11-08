@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfmb3vlqc0vqj"]
+[gd_scene load_steps=19 format=3 uid="uid://bfmb3vlqc0vqj"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_lw3n3"]
 [ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_aehuk"]
@@ -7,30 +7,46 @@
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_fp2hj"]
 [ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_nmccs"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_4f10u"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="5_id5oa"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_cc037"]
+[ext_resource type="Script" path="res://resources/WaitStep.gd" id="6_pt17k"]
 
 [sub_resource type="Resource" id="Resource_s6p4w"]
 script = ExtResource("2_e4fcu")
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_ufmrt"]
 script = ExtResource("4_nmccs")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_n5jso"]
 script = ExtResource("2_aehuk")
 slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_s6p4w"), SubResource("Resource_ufmrt")])
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_xe7c8"]
 script = ExtResource("4_nmccs")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4/Point0")])
-animation_duriation = 0.5
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_qq15g"]
+script = ExtResource("5_id5oa")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/Version4")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_5vica"]
+script = ExtResource("6_pt17k")
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_b3dbi")
-animation_duriation = 0.5
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_udh74"]
+script = ExtResource("2_aehuk")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_qq15g"), SubResource("Resource_5vica"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
 
 [node name="AndEven" type="Control"]
 layout_mode = 3
@@ -40,7 +56,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lw3n3")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_n5jso"), SubResource("Resource_xe7c8"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_n5jso"), SubResource("Resource_xe7c8"), SubResource("Resource_udh74")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

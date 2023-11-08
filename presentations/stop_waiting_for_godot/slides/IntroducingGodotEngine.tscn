@@ -1,25 +1,47 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpjgjyoq0wxtg"]
+[gd_scene load_steps=17 format=3 uid="uid://dpjgjyoq0wxtg"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_16h2c"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_b8qjn"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_g4ej5"]
 [ext_resource type="Script" path="res://resources/FadeInStep.gd" id="3_3l2vy"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_o51ve"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_p2r4s"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_4lflv"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="5_hgvyk"]
 [ext_resource type="Texture2D" uid="uid://bdfh6dhj8o861" path="res://assets/media/images/logo_large_color_dark_md.png" id="5_l1jp0"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_b8qjn")
-animation_duriation = 0.5
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_awelw"]
+script = ExtResource("3_3l2vy")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_20msc"]
+script = ExtResource("2_g4ej5")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_awelw")])
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_4d8rc"]
 script = ExtResource("3_3l2vy")
 targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/CenterContainer/GodotLogo")])
-animation_duriation = 0.5
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_kf1sq"]
+script = ExtResource("5_hgvyk")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel"), NodePath("PanelContainer/MarginContainer/VBox/CenterContainer/GodotLogo")])
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_o51ve")
-animation_duriation = 0.5
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_4e6wk"]
+script = ExtResource("2_g4ej5")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_kf1sq"), SubResource("Resource_1vcjn")])
+animation_duration = 0.5
 
 [node name="IntroducingGodotEngine" type="Control"]
 layout_mode = 3
@@ -29,7 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_16h2c")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_4d8rc"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_20msc"), SubResource("Resource_4d8rc"), SubResource("Resource_4e6wk")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

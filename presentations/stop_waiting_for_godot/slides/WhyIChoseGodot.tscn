@@ -13,7 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_qusma")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_jsdeh"]
 script = ExtResource("4_y4wfy")
@@ -23,7 +23,7 @@ animation_duration = 0.5
 [sub_resource type="Resource" id="Resource_onbjm"]
 script = ExtResource("4_c8ygi")
 slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_jsdeh")])
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_4su8i"]
 script = ExtResource("4_y4wfy")
@@ -66,12 +66,12 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_2vk71")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_fvdy4"]
 script = ExtResource("4_c8ygi")
 slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_c7lrk"), SubResource("Resource_yjuc3"), SubResource("Resource_bgbim"), SubResource("Resource_1vcjn")])
-animation_duriation = null
+animation_duration = 0.5
 
 [node name="WhyIChoseGodot" type="Control"]
 layout_mode = 3

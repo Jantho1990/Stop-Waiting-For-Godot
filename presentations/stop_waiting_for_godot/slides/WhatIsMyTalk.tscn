@@ -1,16 +1,31 @@
-[gd_scene load_steps=14 format=3 uid="uid://lvorls185ve6"]
+[gd_scene load_steps=28 format=3 uid="uid://lvorls185ve6"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_wkxdl"]
+[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_6cdlk"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_k55db"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_jhodw"]
 [ext_resource type="Script" path="res://resources/SlideToZeroStep.gd" id="3_s0fjj"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_b47k7"]
+[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_dw7u0"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_7i1l2"]
 [ext_resource type="Script" path="res://nodes/AnimationWrapper.gd" id="5_rd8fr"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_vhpgr"]
+[ext_resource type="Script" path="res://resources/SlideToLocalPositionStep.gd" id="7_ppsv7"]
+[ext_resource type="Script" path="res://resources/WaitStep.gd" id="8_a5xh0"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="8_h72ux"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_k55db")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_pr0ym"]
+script = ExtResource("4_dw7u0")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_xips6"]
+script = ExtResource("2_6cdlk")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_pr0ym")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_ki3dc"]
@@ -28,8 +43,45 @@ script = ExtResource("3_s0fjj")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot")])
 animation_duration = 0.2
 
+[sub_resource type="Resource" id="Resource_euqcf"]
+script = ExtResource("7_ppsv7")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper/WhatThisTalkIs")])
+target_position = Vector2(1900, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_x2l7r"]
+script = ExtResource("7_ppsv7")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper2/WhatIsGodot")])
+target_position = Vector2(1900, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_bftxd"]
+script = ExtResource("7_ppsv7")
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/VBox/AnimationWrapper3/HowDoYouUseGodot")])
+target_position = Vector2(1900, 0)
+animation_duration = 0.2
+
+[sub_resource type="Resource" id="Resource_rdlkd"]
+script = ExtResource("2_6cdlk")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_euqcf"), SubResource("Resource_x2l7r"), SubResource("Resource_bftxd")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_k3g8j"]
+script = ExtResource("8_h72ux")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_m8a6m"]
+script = ExtResource("8_a5xh0")
+animation_duration = 0.5
+
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_jhodw")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_fu5c2"]
+script = ExtResource("2_6cdlk")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_rdlkd"), SubResource("Resource_k3g8j"), SubResource("Resource_m8a6m"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [node name="WhatIsMyTalk" type="Control"]
@@ -40,7 +92,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wkxdl")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_ki3dc"), SubResource("Resource_2w2ts"), SubResource("Resource_uffhg"), SubResource("Resource_1vcjn")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_xips6"), SubResource("Resource_ki3dc"), SubResource("Resource_2w2ts"), SubResource("Resource_uffhg"), SubResource("Resource_fu5c2")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

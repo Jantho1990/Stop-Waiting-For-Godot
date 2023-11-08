@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cc33b1lhevig8"]
+[gd_scene load_steps=48 format=3 uid="uid://cc33b1lhevig8"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_32yh4"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_0nh50"]
@@ -17,7 +17,7 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_0nh50")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1d5ap"]
 script = ExtResource("4_2y2oh")
@@ -50,7 +50,7 @@ animation_duration = 0.1
 script = ExtResource("6_xrlhd")
 highlight_color = Color(1, 0.929412, 0.631373, 1)
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4/Point1")])
-animation_duration = 0.5
+animation_duration = 0.1
 
 [sub_resource type="Resource" id="Resource_hhtus"]
 script = ExtResource("2_r6iwv")
@@ -80,6 +80,23 @@ highlight_color = Color(1, 1, 1, 1)
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4/Point2")])
 animation_duration = 0.1
 
+[sub_resource type="Resource" id="Resource_ailo5"]
+script = ExtResource("6_xrlhd")
+highlight_color = Color(1, 0.929412, 0.631373, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4/Point3")])
+animation_duration = 0.1
+
+[sub_resource type="Resource" id="Resource_p70cf"]
+script = ExtResource("2_r6iwv")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_28ca0"), SubResource("Resource_ailo5")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_x200g"]
+script = ExtResource("6_xrlhd")
+highlight_color = Color(1, 1, 1, 1)
+animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4/Point3")])
+animation_duration = 0.1
+
 [sub_resource type="Resource" id="Resource_nlesw"]
 script = ExtResource("5_4xv4c")
 animatedNodePaths = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper2/Version3")])
@@ -87,7 +104,7 @@ animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_hbq8n"]
 script = ExtResource("2_r6iwv")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_28ca0"), SubResource("Resource_nlesw")])
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_x200g"), SubResource("Resource_nlesw")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_dikn8"]
@@ -171,7 +188,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_r8dra")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_0ibij"]
 script = ExtResource("2_r6iwv")
@@ -186,7 +203,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_32yh4")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_fgnk2"), SubResource("Resource_tsj6b"), SubResource("Resource_618tn"), SubResource("Resource_hhtus"), SubResource("Resource_bjnon"), SubResource("Resource_hbq8n"), SubResource("Resource_dikn8"), SubResource("Resource_8mw63"), SubResource("Resource_7bkgm"), SubResource("Resource_fvk3f"), SubResource("Resource_0ibij")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_fgnk2"), SubResource("Resource_tsj6b"), SubResource("Resource_618tn"), SubResource("Resource_hhtus"), SubResource("Resource_bjnon"), SubResource("Resource_p70cf"), SubResource("Resource_hbq8n"), SubResource("Resource_dikn8"), SubResource("Resource_8mw63"), SubResource("Resource_7bkgm"), SubResource("Resource_fvk3f"), SubResource("Resource_0ibij")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -236,7 +253,7 @@ theme_override_constants/margin_right = 64
 layout_mode = 2
 
 [node name="AnimationWrapper" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(540, 395)
+custom_minimum_size = Vector2(700, 439)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("10_7trux")
@@ -245,13 +262,12 @@ script = ExtResource("10_7trux")
 custom_minimum_size = Vector2(540, 0)
 layout_mode = 2
 offset_left = -800.0
-offset_right = -260.0
+offset_right = -100.0
 offset_bottom = 395.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 size_flags_stretch_ratio = 1.4
 theme_override_constants/separation = 32
-alignment = 1
 
 [node name="Title" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4"]
 layout_mode = 2
@@ -326,7 +342,30 @@ size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/italics_font_size = 40
 bbcode_enabled = true
-text = "Less mature ecosystem due to recency"
+text = "Less mature, smaller ecosystem"
+fit_content = true
+
+[node name="Point3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RightArrow" type="TextureRect" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4/Point3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_rwfq5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer/AnimationWrapper/Version4/Point3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "Is the future of the engine"
 fit_content = true
 
 [node name="AnimationWrapper2" type="Control" parent="PanelContainer/MarginContainer/VBox/MarginContainer2/HBoxContainer"]

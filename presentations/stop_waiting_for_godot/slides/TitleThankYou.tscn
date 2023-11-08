@@ -18,13 +18,13 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_65l5c")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_g1g38"]
 script = ExtResource("4_3jiky")
 animationPlayerPath = NodePath("AnimationPlayer")
 animation_name = "title_in"
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_l1pmj"]
 script = ExtResource("5_j04jg")
@@ -32,12 +32,12 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_lnnen"]
 script = ExtResource("6_sphpa")
-targetNodes = Array[NodePath]([NodePath("Panel"), NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/RichTextLabel2")])
+targetNodes = Array[NodePath]([NodePath("Panel"), NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/RichTextLabel")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_3yv8u"]
 script = ExtResource("7_go86a")
-targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer/RichTextLabel2"), NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/RichTextLabel")])
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/RichTextLabel2"), NodePath("PanelContainer/MarginContainer/VBox/VBox3/MarginContainer/MarginContainer/RichTextLabel2")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_kp6gr"]
@@ -48,22 +48,22 @@ animation_duration = 0.5
 [sub_resource type="Resource" id="Resource_vq00b"]
 script = ExtResource("2_pdi7m")
 slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_g1g38"), SubResource("Resource_l1pmj"), SubResource("Resource_kp6gr")])
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_b2tck"]
 script = ExtResource("4_3jiky")
 animationPlayerPath = NodePath("AnimationPlayer")
 animation_name = "title_out"
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_lo652")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_yvaip"]
 script = ExtResource("2_pdi7m")
 slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_b2tck"), SubResource("Resource_1vcjn")])
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dbd4"]
 
@@ -321,19 +321,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 172
 bbcode_enabled = true
 text = "[b]Thank you![/b]"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBox/VBox3/MarginContainer"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 235)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 172
 bbcode_enabled = true

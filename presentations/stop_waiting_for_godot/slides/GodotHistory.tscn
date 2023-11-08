@@ -15,7 +15,7 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_82sgg")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_3pi83"]
 script = ExtResource("4_t6xoa")
@@ -100,7 +100,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_yoo7d")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_i0l7j"]
 script = ExtResource("2_w8nmh")

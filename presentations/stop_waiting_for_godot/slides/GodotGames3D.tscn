@@ -1,13 +1,15 @@
-[gd_scene load_steps=30 format=3 uid="uid://t36ohlettqw5"]
+[gd_scene load_steps=35 format=3 uid="uid://t36ohlettqw5"]
 
 [ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_x7m4n"]
 [ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_mdqb2"]
 [ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_3d30k"]
 [ext_resource type="Script" path="res://resources/AnimationPlayStep.gd" id="3_4csvg"]
 [ext_resource type="PackedScene" uid="uid://p8wlcoi8pcx" path="res://scenes/VideoWidget3D/VideoWidget3D.tscn" id="4_4e8ui"]
+[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_6rb8t"]
 [ext_resource type="Script" path="res://resources/MultiStep.gd" id="4_mjs3b"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_swh2v"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_aqsmh"]
+[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="6_j3rmu"]
 [ext_resource type="VideoStream" path="res://assets/media/videos/dome-keeper-accolades-854x480.ogv" id="7_bfwl4"]
 [ext_resource type="VideoStream" path="res://assets/media/videos/brotato-release-854x480.ogv" id="8_7g36d"]
 [ext_resource type="VideoStream" path="res://assets/media/videos/cassette-beasts-launch-854x480.ogv" id="9_2pjt8"]
@@ -15,6 +17,16 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mdqb2")
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_xd2nt"]
+script = ExtResource("4_6rb8t")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
+[sub_resource type="Resource" id="Resource_7jwx3"]
+script = ExtResource("4_mjs3b")
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_xd2nt")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_n38q5"]
@@ -47,13 +59,18 @@ animationPlayerPath = NodePath("PanelContainer/SubViewportContainer/SubViewport/
 animation_name = "end_video"
 animation_duration = 0.5
 
+[sub_resource type="Resource" id="Resource_a5ssc"]
+script = ExtResource("6_j3rmu")
+targetNodes = Array[NodePath]([NodePath("PanelContainer/MarginContainer/VBox/VBox2/MarginContainer/RichTextLabel")])
+animation_duration = 0.5
+
 [sub_resource type="Resource" id="Resource_fdd1m"]
 script = ExtResource("3_3d30k")
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_bbpph"]
 script = ExtResource("4_mjs3b")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_w3854"), SubResource("Resource_fdd1m")])
+slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_w3854"), SubResource("Resource_a5ssc"), SubResource("Resource_fdd1m")])
 animation_duration = 0.5
 
 [sub_resource type="World3D" id="World3D_eyk47"]
@@ -768,7 +785,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x7m4n")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_n38q5"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_bbpph")])
+steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_7jwx3"), SubResource("Resource_n38q5"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_bbpph")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
