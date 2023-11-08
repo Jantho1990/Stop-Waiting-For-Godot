@@ -121,7 +121,7 @@ mesh = SubResource("ArrayMesh_5qxnj")
 skeleton = NodePath("")
 
 [node name="player" parent="." instance=ExtResource("3_cmu2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.605333, 1.88916, 1.12327)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.605333, 0.992776, 1.12327)
 look_at_target = Vector3(15.3947, 7.30896, 12.867)
 freeze = true
 
