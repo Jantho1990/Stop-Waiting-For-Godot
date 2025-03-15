@@ -55,8 +55,8 @@ func next() -> void:
   currentStep = steps[step]
   step += 1
   currentStep.next()
-    
-    
+  
+  
 func previous() -> void:
   if step == 0:
     _finish_reverse()

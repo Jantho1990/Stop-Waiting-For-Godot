@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cie0dy35ien8t"]
 
-[ext_resource type="Script" path="res://nodes/Presentation.gd" id="1_3yxg0"]
+[ext_resource type="Script" uid="uid://cx5ff6rmig1pl" path="res://nodes/Presentation.gd" id="1_3yxg0"]
 [ext_resource type="PackedScene" uid="uid://dm1fyqv1tqg6k" path="res://presentations/test0/slides/TestSlide0Slide.tscn" id="2_qgbn8"]
 [ext_resource type="PackedScene" uid="uid://c7tn5mmu6pl4t" path="res://presentations/test0/slides/TestSlide1Slide.tscn" id="3_tpdon"]
 [ext_resource type="PackedScene" uid="uid://n0jie61s1qrc" path="res://presentations/stop_waiting_for_godot/slides/WhoAreYou.tscn" id="4_7u5ug"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c64ou5363pi5n"]
+[gd_scene load_steps=12 format=3 uid="uid://c64ou5363pi5n"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_ukk1o"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_tgycw"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_q7gtv"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_ukk1o"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_0gfkj"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_tgycw"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_q7gtv"]
 [ext_resource type="PackedScene" uid="uid://cuivsw58met0m" path="res://scenes/Title3DWorldScene/Title3DWorldScene.tscn" id="4_8qyrg"]
 [ext_resource type="StyleBox" uid="uid://dj8jofx857n22" path="res://assets/themes/StopWaitingForGodot/resources/HSepKeywordColorRed.tres" id="4_mswj7"]
 [ext_resource type="StyleBox" uid="uid://g8gt4dthr7ts" path="res://assets/themes/StopWaitingForGodot/resources/HSepCCCGray.tres" id="5_ydq57"]
@@ -10,11 +11,11 @@
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_tgycw")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_q7gtv")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3arb"]
 
@@ -26,7 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ukk1o")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[ExtResource("2_0gfkj")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1

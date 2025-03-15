@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://b54xaa8wc1dkq"]
 
-[ext_resource type="Script" path="res://scenes/OldMainStage/OldMainStage.gd" id="1_2llv0"]
+[ext_resource type="Script" uid="uid://c1oykosikoe8c" path="res://scenes/OldMainStage/OldMainStage.gd" id="1_2llv0"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="2_lumad"]
 [ext_resource type="PackedScene" uid="uid://g11g8qtloe0y" path="res://scenes/SWFGPresentationLauncher/SWFGPresentationLauncher.tscn" id="3_dpxcc"]
-[ext_resource type="Script" path="res://scenes/OldMainStage/Camera3D.gd" id="4_6ttve"]
-[ext_resource type="Script" path="res://scenes/MainStage/InteractionCamera.gd" id="5_ygybj"]
+[ext_resource type="Script" uid="uid://ci0vi15mimg43" path="res://scenes/OldMainStage/Camera3D.gd" id="4_6ttve"]
+[ext_resource type="Script" uid="uid://hjwt42hsvhrv" path="res://scenes/MainStage/InteractionCamera.gd" id="5_ygybj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov2qa"]
 albedo_color = Color(0.290196, 0.447059, 0.615686, 1)

@@ -1,19 +1,20 @@
-[gd_scene load_steps=27 format=3 uid="uid://t78fslafkw7s"]
+[gd_scene load_steps=28 format=3 uid="uid://t78fslafkw7s"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_esjag"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_dwkj3"]
-[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_e8pei"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_jmhaf"]
-[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_sb4ac"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_esjag"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_dwkj3"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_e8pei"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_npoxw"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_jmhaf"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_sb4ac"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_v0kw2"]
-[ext_resource type="Script" path="res://resources/HighlightStep.gd" id="5_8wdal"]
-[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="5_d8cql"]
+[ext_resource type="Script" uid="uid://dttfkqalo7xhk" path="res://resources/HighlightStep.gd" id="5_8wdal"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="5_d8cql"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_lcuax"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_blh4o"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_dwkj3")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_g0nfc"]
 script = ExtResource("4_sb4ac")
@@ -22,7 +23,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_vopul"]
 script = ExtResource("2_e8pei")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_g0nfc")])
+slide_steps = Array[ExtResource("2_npoxw")]([SubResource("Resource_sho4t"), SubResource("Resource_g0nfc")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_nxsc7"]
@@ -45,7 +46,7 @@ animation_duration = 0.1
 
 [sub_resource type="Resource" id="Resource_b27s6"]
 script = ExtResource("2_e8pei")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_k3c2w"), SubResource("Resource_wx0a6")])
+slide_steps = Array[ExtResource("2_npoxw")]([SubResource("Resource_k3c2w"), SubResource("Resource_wx0a6")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_kf4wk"]
@@ -62,7 +63,7 @@ animation_duration = 0.1
 
 [sub_resource type="Resource" id="Resource_r41sf"]
 script = ExtResource("2_e8pei")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_kf4wk"), SubResource("Resource_23p6w")])
+slide_steps = Array[ExtResource("2_npoxw")]([SubResource("Resource_kf4wk"), SubResource("Resource_23p6w")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_axnca"]
@@ -79,7 +80,7 @@ animation_duration = 0.1
 
 [sub_resource type="Resource" id="Resource_xj1nx"]
 script = ExtResource("2_e8pei")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_axnca"), SubResource("Resource_phl70")])
+slide_steps = Array[ExtResource("2_npoxw")]([SubResource("Resource_axnca"), SubResource("Resource_phl70")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_wqk6e"]
@@ -89,11 +90,11 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_jmhaf")
-animation_duriation = null
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1au6w"]
 script = ExtResource("2_e8pei")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_wqk6e"), SubResource("Resource_1vcjn")])
+slide_steps = Array[ExtResource("2_npoxw")]([SubResource("Resource_wqk6e"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [node name="OpenSourceSoftware" type="Control"]
@@ -104,7 +105,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_esjag")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_vopul"), SubResource("Resource_nxsc7"), SubResource("Resource_b27s6"), SubResource("Resource_r41sf"), SubResource("Resource_xj1nx"), SubResource("Resource_1au6w")])
+steps = Array[ExtResource("2_npoxw")]([SubResource("Resource_vopul"), SubResource("Resource_nxsc7"), SubResource("Resource_b27s6"), SubResource("Resource_r41sf"), SubResource("Resource_xj1nx"), SubResource("Resource_1au6w")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

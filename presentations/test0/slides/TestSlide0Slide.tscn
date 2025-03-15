@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm1fyqv1tqg6k"]
+[gd_scene load_steps=7 format=3 uid="uid://dm1fyqv1tqg6k"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_gnu5p"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_2663i"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_i8ap4"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_gnu5p"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_2663i"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_we6dh"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_i8ap4"]
 
 [sub_resource type="Resource" id="Resource_4mqmf"]
 script = ExtResource("2_2663i")
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_5d8id"]
 script = ExtResource("3_i8ap4")
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [node name="TestSlide0Slide" type="Control"]
 layout_mode = 3
@@ -20,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gnu5p")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_4mqmf"), SubResource("Resource_5d8id")])
+steps = Array[ExtResource("2_we6dh")]([SubResource("Resource_4mqmf"), SubResource("Resource_5d8id")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

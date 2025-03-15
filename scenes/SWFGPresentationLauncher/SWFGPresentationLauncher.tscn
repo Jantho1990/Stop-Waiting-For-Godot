@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://g11g8qtloe0y"]
 
-[ext_resource type="Script" path="res://scenes/SWFGPresentationLauncher/SWFGPresentationLauncher.gd" id="1_x5bj5"]
+[ext_resource type="Script" uid="uid://bcuoebuuyi2ou" path="res://scenes/SWFGPresentationLauncher/SWFGPresentationLauncher.gd" id="1_x5bj5"]
 [ext_resource type="PackedScene" uid="uid://brtqwto1mgfvj" path="res://presentations/stop_waiting_for_godot/StopWaitingForGodotPresentation.tscn" id="2_jqsre"]
 
 [node name="SWFGPresentationLauncher" type="Control"]

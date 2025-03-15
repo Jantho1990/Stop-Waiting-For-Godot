@@ -1,19 +1,20 @@
-[gd_scene load_steps=35 format=3 uid="uid://t36ohlettqw5"]
+[gd_scene load_steps=36 format=3 uid="uid://t36ohlettqw5"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_x7m4n"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_mdqb2"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_3d30k"]
-[ext_resource type="Script" path="res://resources/AnimationPlayStep.gd" id="3_4csvg"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_x7m4n"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_mdqb2"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_sprvs"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_3d30k"]
+[ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="3_4csvg"]
 [ext_resource type="PackedScene" uid="uid://p8wlcoi8pcx" path="res://scenes/VideoWidget3D/VideoWidget3D.tscn" id="4_4e8ui"]
-[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_6rb8t"]
-[ext_resource type="Script" path="res://resources/MultiStep.gd" id="4_mjs3b"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_6rb8t"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="4_mjs3b"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_swh2v"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_aqsmh"]
-[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="6_j3rmu"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/dome-keeper-accolades-854x480.ogv" id="7_bfwl4"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/brotato-release-854x480.ogv" id="8_7g36d"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/cassette-beasts-launch-854x480.ogv" id="9_2pjt8"]
-[ext_resource type="VideoStream" path="res://assets/media/videos/lumencraft-release-854x480.ogv" id="10_e5ohr"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_j3rmu"]
+[ext_resource type="VideoStream" uid="uid://c1ju8p3gl0joi" path="res://assets/media/videos/dome-keeper-accolades-854x480.ogv" id="7_bfwl4"]
+[ext_resource type="VideoStream" uid="uid://bwdtjs57ibgfo" path="res://assets/media/videos/brotato-release-854x480.ogv" id="8_7g36d"]
+[ext_resource type="VideoStream" uid="uid://cedo7mvuxd6f0" path="res://assets/media/videos/cassette-beasts-launch-854x480.ogv" id="9_2pjt8"]
+[ext_resource type="VideoStream" uid="uid://d4i4ccjph4tkb" path="res://assets/media/videos/lumencraft-release-854x480.ogv" id="10_e5ohr"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_mdqb2")
@@ -26,7 +27,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_7jwx3"]
 script = ExtResource("4_mjs3b")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_xd2nt")])
+slide_steps = Array[ExtResource("2_sprvs")]([SubResource("Resource_sho4t"), SubResource("Resource_xd2nt")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_n38q5"]
@@ -70,7 +71,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_bbpph"]
 script = ExtResource("4_mjs3b")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_w3854"), SubResource("Resource_a5ssc"), SubResource("Resource_fdd1m")])
+slide_steps = Array[ExtResource("2_sprvs")]([SubResource("Resource_w3854"), SubResource("Resource_a5ssc"), SubResource("Resource_fdd1m")])
 animation_duration = 0.5
 
 [sub_resource type="World3D" id="World3D_eyk47"]
@@ -768,13 +769,13 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 1, 0.7, 1, 0, 0, 1, 1, 1, -5, 0, 
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ng1i"]
 _data = {
-"RESET": SubResource("Animation_5i6fi"),
-"advance_video_1": SubResource("Animation_1ykq6"),
-"advance_video_2": SubResource("Animation_oqcac"),
-"advance_video_3": SubResource("Animation_ws7bg"),
-"advance_video_4": SubResource("Animation_ucuvo"),
-"end_video": SubResource("Animation_3oq6r"),
-"test_out_of_frame": SubResource("Animation_qj47e")
+&"RESET": SubResource("Animation_5i6fi"),
+&"advance_video_1": SubResource("Animation_1ykq6"),
+&"advance_video_2": SubResource("Animation_oqcac"),
+&"advance_video_3": SubResource("Animation_ws7bg"),
+&"advance_video_4": SubResource("Animation_ucuvo"),
+&"end_video": SubResource("Animation_3oq6r"),
+&"test_out_of_frame": SubResource("Animation_qj47e")
 }
 
 [node name="GodotGames3D" type="Control"]
@@ -785,7 +786,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x7m4n")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_7jwx3"), SubResource("Resource_n38q5"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_bbpph")])
+steps = Array[ExtResource("2_sprvs")]([SubResource("Resource_7jwx3"), SubResource("Resource_n38q5"), SubResource("Resource_b7x7y"), SubResource("Resource_wufar"), SubResource("Resource_vaecg"), SubResource("Resource_bbpph")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

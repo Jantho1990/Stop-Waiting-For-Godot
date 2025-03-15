@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://p8wlcoi8pcx"]
 
-[ext_resource type="Script" path="res://scenes/VideoWidget3D/VideoWidget3D.gd" id="1_cphga"]
+[ext_resource type="Script" uid="uid://dw568iultlv0h" path="res://scenes/VideoWidget3D/VideoWidget3D.gd" id="1_cphga"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_144w0"]
 size = Vector2(3, 2)

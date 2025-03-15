@@ -1,17 +1,18 @@
-[gd_scene load_steps=30 format=3 uid="uid://dku1gacrgwjdk"]
+[gd_scene load_steps=31 format=3 uid="uid://dku1gacrgwjdk"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_eexbr"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_65l5c"]
-[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_pdi7m"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_lo652"]
-[ext_resource type="Script" path="res://resources/AnimationPlayStep.gd" id="4_3jiky"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_eexbr"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_65l5c"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_545nj"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_pdi7m"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_lo652"]
+[ext_resource type="Script" uid="uid://qpv26n56bah3" path="res://resources/AnimationPlayStep.gd" id="4_3jiky"]
 [ext_resource type="StyleBox" uid="uid://dj8jofx857n22" path="res://assets/themes/StopWaitingForGodot/resources/HSepKeywordColorRed.tres" id="4_lostt"]
 [ext_resource type="StyleBox" uid="uid://g8gt4dthr7ts" path="res://assets/themes/StopWaitingForGodot/resources/HSepCCCGray.tres" id="5_4jroh"]
-[ext_resource type="Script" path="res://resources/WaitStep.gd" id="5_j04jg"]
+[ext_resource type="Script" uid="uid://els5543ifwap" path="res://resources/WaitStep.gd" id="5_j04jg"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_3uch2"]
-[ext_resource type="Script" path="res://resources/SimulStep.gd" id="6_67iwe"]
-[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="6_sphpa"]
-[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="7_go86a"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="6_67iwe"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_sphpa"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="7_go86a"]
 [ext_resource type="PackedScene" uid="uid://cuivsw58met0m" path="res://scenes/Title3DWorldScene/Title3DWorldScene.tscn" id="8_rbntu"]
 [ext_resource type="StyleBox" uid="uid://hfgxwrl7l1ub" path="res://assets/themes/StopWaitingForGodot/resources/PanelEditorBlue.tres" id="9_ivo23"]
 [ext_resource type="Animation" uid="uid://26b1efpj5vui" path="res://assets/animations/TitleSlides.tres" id="9_ohqma"]
@@ -42,12 +43,12 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_kp6gr"]
 script = ExtResource("6_67iwe")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_lnnen"), SubResource("Resource_3yv8u")])
+slide_steps = Array[ExtResource("2_545nj")]([SubResource("Resource_lnnen"), SubResource("Resource_3yv8u")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_vq00b"]
 script = ExtResource("2_pdi7m")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_g1g38"), SubResource("Resource_l1pmj"), SubResource("Resource_kp6gr")])
+slide_steps = Array[ExtResource("2_545nj")]([SubResource("Resource_sho4t"), SubResource("Resource_g1g38"), SubResource("Resource_l1pmj"), SubResource("Resource_kp6gr")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_b2tck"]
@@ -62,7 +63,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_yvaip"]
 script = ExtResource("2_pdi7m")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_b2tck"), SubResource("Resource_1vcjn")])
+slide_steps = Array[ExtResource("2_545nj")]([SubResource("Resource_b2tck"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dbd4"]
@@ -219,9 +220,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_clmje"]
 _data = {
-"RESET": SubResource("Animation_flyu5"),
-"title_in": SubResource("Animation_8ka77"),
-"title_out": ExtResource("9_ohqma")
+&"RESET": SubResource("Animation_flyu5"),
+&"title_in": SubResource("Animation_8ka77"),
+&"title_out": ExtResource("9_ohqma")
 }
 
 [node name="TitleThankYou" type="Control"]
@@ -232,7 +233,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eexbr")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_vq00b"), SubResource("Resource_yvaip")])
+steps = Array[ExtResource("2_545nj")]([SubResource("Resource_vq00b"), SubResource("Resource_yvaip")])
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1

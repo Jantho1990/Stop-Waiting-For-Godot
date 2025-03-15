@@ -1,15 +1,16 @@
-[gd_scene load_steps=24 format=3 uid="uid://vbm3y2n6466n"]
+[gd_scene load_steps=25 format=3 uid="uid://vbm3y2n6466n"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_sa1of"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_nqr67"]
-[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_prjm5"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_duuah"]
-[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_3h0mu"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_sa1of"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_b0a0y"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_nqr67"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_prjm5"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_duuah"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_3h0mu"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_c6wjy"]
-[ext_resource type="Script" path="res://resources/SlideToZeroStep.gd" id="5_d0pbr"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="5_d0pbr"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_mbcih"]
-[ext_resource type="Script" path="res://nodes/AnimationWrapper.gd" id="6_bna6c"]
-[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="6_owk7h"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="6_bna6c"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_owk7h"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_uuit4"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
@@ -23,7 +24,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_3o2ix"]
 script = ExtResource("2_prjm5")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_by1g0")])
+slide_steps = Array[ExtResource("2_b0a0y")]([SubResource("Resource_sho4t"), SubResource("Resource_by1g0")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_4b3od"]
@@ -48,7 +49,7 @@ animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_ibkmk"]
 script = ExtResource("2_prjm5")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_4b3od"), SubResource("Resource_ma8cr"), SubResource("Resource_nxjgw"), SubResource("Resource_dk7wo")])
+slide_steps = Array[ExtResource("2_b0a0y")]([SubResource("Resource_4b3od"), SubResource("Resource_ma8cr"), SubResource("Resource_nxjgw"), SubResource("Resource_dk7wo")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_2hohj"]
@@ -67,7 +68,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_phhlc"]
 script = ExtResource("2_prjm5")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_yg2j3"), SubResource("Resource_1vcjn")])
+slide_steps = Array[ExtResource("2_b0a0y")]([SubResource("Resource_yg2j3"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [node name="ReleaseTargets" type="Control"]
@@ -78,7 +79,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sa1of")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_3o2ix"), SubResource("Resource_ibkmk"), SubResource("Resource_2hohj"), SubResource("Resource_phhlc")])
+steps = Array[ExtResource("2_b0a0y")]([SubResource("Resource_3o2ix"), SubResource("Resource_ibkmk"), SubResource("Resource_2hohj"), SubResource("Resource_phhlc")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
