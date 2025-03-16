@@ -1,19 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4lfuw7s55lyq"]
+[gd_scene load_steps=10 format=3 uid="uid://b4lfuw7s55lyq"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_nk63v"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_ylkm2"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_7ld2c"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_nk63v"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_f5x07"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_ylkm2"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_7ld2c"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_jhltv"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="5_4ubeb"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_ibogc"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_ylkm2")
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1vcjn"]
 script = ExtResource("3_7ld2c")
-animation_duriation = 0.5
+animation_duration = 0.5
 
 [node name="BasicSlideTemplate" type="Control"]
 layout_mode = 3
@@ -23,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nk63v")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
+steps = Array[ExtResource("2_f5x07")]([SubResource("Resource_sho4t"), SubResource("Resource_1vcjn")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

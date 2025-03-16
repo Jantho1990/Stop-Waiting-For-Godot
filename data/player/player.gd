@@ -88,9 +88,9 @@ func _set_freeze(value: bool) -> void:
   set_process_input(!freeze)
 
 func _look_with_joypad_right_stick() -> void:
-    parts.head.rotation_degrees.y -= Input.get_axis("look_left", "look_right") * 30 * sensitivity
-    parts.head.rotation_degrees.x -= Input.get_axis("look_up", "look_down") * 30 * sensitivity
-    parts.head.rotation.x = clamp(parts.head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+  parts.head.rotation_degrees.y -= Input.get_axis("look_left", "look_right") * 30 * sensitivity
+  parts.head.rotation_degrees.x -= Input.get_axis("look_up", "look_down") * 30 * sensitivity
+  parts.head.rotation.x = clamp(parts.head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _is_joypad_right_stick() -> bool:
   return Input.is_action_pressed("look_down") or Input.is_action_pressed("look_left") or Input.is_action_pressed("look_right") or Input.is_action_pressed("look_up")

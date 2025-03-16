@@ -1,12 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjcnpde24tlkc"]
+[gd_scene load_steps=5 format=3 uid="uid://bjcnpde24tlkc"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_p5sx0"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_p5sx0"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_0gjx3"]
 [ext_resource type="Texture2D" uid="uid://cunlbm4scrnt2" path="res://assets/media/images/Iven Smith - 9313-Vert.jpg" id="2_j8jlp"]
-[ext_resource type="Script" path="res://resources/FadeSlideInAndPrevStep.gd" id="2_onpyr"]
-
-[sub_resource type="Resource" id="Resource_b5bya"]
-script = ExtResource("2_onpyr")
-animation_duriation = 0.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6ydw"]
 bg_color = Color(0.278431, 0.54902, 0.74902, 1)
@@ -19,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p5sx0")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_b5bya")])
+steps = Array[ExtResource("2_0gjx3")]([])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

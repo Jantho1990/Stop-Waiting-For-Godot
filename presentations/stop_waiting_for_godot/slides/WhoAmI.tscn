@@ -1,19 +1,20 @@
-[gd_scene load_steps=30 format=3 uid="uid://b550pbe3vnrxo"]
+[gd_scene load_steps=31 format=3 uid="uid://b550pbe3vnrxo"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_svyub"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_18vhw"]
-[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_sfn30"]
-[ext_resource type="Script" path="res://resources/SlideToZeroStep.gd" id="3_e2bfm"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="4_bv1bt"]
-[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_y3xew"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_svyub"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_18vhw"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_j66e8"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_sfn30"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="3_e2bfm"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="4_bv1bt"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_y3xew"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="5_34ac4"]
-[ext_resource type="Script" path="res://nodes/AnimationWrapper.gd" id="6_oda56"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="6_oda56"]
 [ext_resource type="Texture2D" uid="uid://bqscws1ahi6gx" path="res://assets/media/images/me-asset.jpg" id="6_xakas"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="7_jaes5"]
-[ext_resource type="Script" path="res://resources/SimulStep.gd" id="7_t87py"]
+[ext_resource type="Script" uid="uid://kdht20jhjko6" path="res://resources/SimulStep.gd" id="7_t87py"]
 [ext_resource type="Texture2D" uid="uid://ccfgi7halul2c" path="res://assets/media/images/loonicy_logo_white_lettering_sm.png" id="8_elme1"]
-[ext_resource type="Script" path="res://resources/SlideToLocalPositionStep.gd" id="8_grrgu"]
-[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="9_ea23u"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="8_grrgu"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="9_ea23u"]
 [ext_resource type="PackedScene" uid="uid://c2crawx2oaeju" path="res://scenes/DTWordmark/DTWordmark.tscn" id="9_plk0l"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="10_tyisn"]
 
@@ -28,7 +29,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_whc7a"]
 script = ExtResource("2_sfn30")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_arwlc")])
+slide_steps = Array[ExtResource("2_j66e8")]([SubResource("Resource_sho4t"), SubResource("Resource_arwlc")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_gi0mb"]
@@ -66,7 +67,7 @@ animation_duration = 0.2
 
 [sub_resource type="Resource" id="Resource_hhihw"]
 script = ExtResource("7_t87py")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_0owdj"), SubResource("Resource_l2pno"), SubResource("Resource_8tfej")])
+slide_steps = Array[ExtResource("2_j66e8")]([SubResource("Resource_0owdj"), SubResource("Resource_l2pno"), SubResource("Resource_8tfej")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_ff5r5"]
@@ -80,7 +81,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_ywcmg"]
 script = ExtResource("2_sfn30")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_hhihw"), SubResource("Resource_ff5r5"), SubResource("Resource_1vcjn")])
+slide_steps = Array[ExtResource("2_j66e8")]([SubResource("Resource_hhihw"), SubResource("Resource_ff5r5"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [node name="WhoAmI" type="Control"]
@@ -91,7 +92,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_svyub")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_whc7a"), SubResource("Resource_gi0mb"), SubResource("Resource_uly4x"), SubResource("Resource_ytwgk"), SubResource("Resource_ywcmg")])
+steps = Array[ExtResource("2_j66e8")]([SubResource("Resource_whc7a"), SubResource("Resource_gi0mb"), SubResource("Resource_uly4x"), SubResource("Resource_ytwgk"), SubResource("Resource_ywcmg")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

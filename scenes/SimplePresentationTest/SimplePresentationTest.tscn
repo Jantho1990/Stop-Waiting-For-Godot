@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqkyj8al6y7sc"]
 
-[ext_resource type="Script" path="res://scenes/SimplePresentationTest/SimplePresentationTest.gd" id="1_rpfeq"]
+[ext_resource type="Script" uid="uid://do7p5fdwa4t8g" path="res://scenes/SimplePresentationTest/SimplePresentationTest.gd" id="1_rpfeq"]
 [ext_resource type="PackedScene" uid="uid://cie0dy35ien8t" path="res://presentations/test0/Test0Presentation.tscn" id="2_skdra"]
 
 [node name="SimplePresentationTest" type="Control"]

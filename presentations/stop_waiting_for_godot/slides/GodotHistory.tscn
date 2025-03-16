@@ -1,17 +1,18 @@
-[gd_scene load_steps=31 format=3 uid="uid://dk54xyvfb1os4"]
+[gd_scene load_steps=32 format=3 uid="uid://dk54xyvfb1os4"]
 
-[ext_resource type="Script" path="res://nodes/PresentationSlide.gd" id="1_mocak"]
-[ext_resource type="Script" path="res://resources/ShowAndPrevStep.gd" id="2_82sgg"]
-[ext_resource type="Script" path="res://resources/MultiStep.gd" id="2_w8nmh"]
-[ext_resource type="Script" path="res://resources/HideAndNextStep.gd" id="3_yoo7d"]
+[ext_resource type="Script" uid="uid://0v5eoi6ug6ty" path="res://nodes/PresentationSlide.gd" id="1_mocak"]
+[ext_resource type="Script" uid="uid://c87bqhd78xism" path="res://resources/ShowAndPrevStep.gd" id="2_82sgg"]
+[ext_resource type="Script" uid="uid://seb3c43k5spx" path="res://resources/SlideStep.gd" id="2_vvdyb"]
+[ext_resource type="Script" uid="uid://capy37k215xbr" path="res://resources/MultiStep.gd" id="2_w8nmh"]
+[ext_resource type="Script" uid="uid://b2waivlvwc37x" path="res://resources/HideAndNextStep.gd" id="3_yoo7d"]
 [ext_resource type="StyleBox" uid="uid://cdhneblxxhen5" path="res://assets/themes/StopWaitingForGodot/resources/HSepBaseTypeGreen.tres" id="4_d33sc"]
-[ext_resource type="Script" path="res://resources/FadeInStep.gd" id="4_t6xoa"]
-[ext_resource type="Script" path="res://nodes/AnimationWrapper.gd" id="5_db2ov"]
+[ext_resource type="Script" uid="uid://bcqb05pw1pkii" path="res://resources/FadeInStep.gd" id="4_t6xoa"]
+[ext_resource type="Script" uid="uid://d1ilak4f38454" path="res://nodes/AnimationWrapper.gd" id="5_db2ov"]
 [ext_resource type="Texture2D" uid="uid://d1jhducj0m7b4" path="res://assets/media/icons/right.png" id="5_glwwr"]
-[ext_resource type="Script" path="res://resources/SlideToZeroStep.gd" id="5_tb051"]
-[ext_resource type="Script" path="res://resources/FadeOutStep.gd" id="6_6houe"]
+[ext_resource type="Script" uid="uid://ctoliojwclq4e" path="res://resources/SlideToZeroStep.gd" id="5_tb051"]
+[ext_resource type="Script" uid="uid://63q6guytynws" path="res://resources/FadeOutStep.gd" id="6_6houe"]
 [ext_resource type="PackedScene" uid="uid://dql8pta14gljo" path="res://scenes/PresentationFooter/PresentationFooter.tscn" id="6_m8nt7"]
-[ext_resource type="Script" path="res://resources/SlideToLocalPositionStep.gd" id="6_y8acl"]
+[ext_resource type="Script" uid="uid://yq4ysscbjf0r" path="res://resources/SlideToLocalPositionStep.gd" id="6_y8acl"]
 
 [sub_resource type="Resource" id="Resource_sho4t"]
 script = ExtResource("2_82sgg")
@@ -24,7 +25,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_cnqu4"]
 script = ExtResource("2_w8nmh")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_sho4t"), SubResource("Resource_3pi83")])
+slide_steps = Array[ExtResource("2_vvdyb")]([SubResource("Resource_sho4t"), SubResource("Resource_3pi83")])
 animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_4w7ut"]
@@ -104,7 +105,7 @@ animation_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_i0l7j"]
 script = ExtResource("2_w8nmh")
-slide_steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_7nolk"), SubResource("Resource_mlaim"), SubResource("Resource_kos4w"), SubResource("Resource_rec84"), SubResource("Resource_ip0e7"), SubResource("Resource_iv65w"), SubResource("Resource_6id3u"), SubResource("Resource_1vcjn")])
+slide_steps = Array[ExtResource("2_vvdyb")]([SubResource("Resource_7nolk"), SubResource("Resource_mlaim"), SubResource("Resource_kos4w"), SubResource("Resource_rec84"), SubResource("Resource_ip0e7"), SubResource("Resource_iv65w"), SubResource("Resource_6id3u"), SubResource("Resource_1vcjn")])
 animation_duration = 0.5
 
 [node name="GodotHistory" type="Control"]
@@ -115,7 +116,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mocak")
-steps = Array[Resource("res://resources/SlideStep.gd")]([SubResource("Resource_cnqu4"), SubResource("Resource_4w7ut"), SubResource("Resource_fg1he"), SubResource("Resource_happ8"), SubResource("Resource_8el5d"), SubResource("Resource_h8cwq"), SubResource("Resource_ry6kw"), SubResource("Resource_i0l7j")])
+steps = Array[ExtResource("2_vvdyb")]([SubResource("Resource_cnqu4"), SubResource("Resource_4w7ut"), SubResource("Resource_fg1he"), SubResource("Resource_happ8"), SubResource("Resource_8el5d"), SubResource("Resource_h8cwq"), SubResource("Resource_ry6kw"), SubResource("Resource_i0l7j")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
